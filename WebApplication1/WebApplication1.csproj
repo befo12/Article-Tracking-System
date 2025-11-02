@@ -81,6 +81,7 @@
     <Content Include="Pages\search.aspx" />
     <Content Include="Pages\timeline.aspx" />
     <Content Include="Global.asax" />
+    <None Include="SecureFile.ashx" />
     <Content Include="Web.config" />
     <Content Include="Pages\wishlist.aspx" />
   </ItemGroup>
@@ -206,6 +207,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AppData\" />
     <Folder Include="AppStart\" />
     <Folder Include="Data\" />
   </ItemGroup>

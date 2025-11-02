@@ -54,44 +54,77 @@
       AllowPaging="true" PageSize="10">
 
     <Columns>
-      <%-- Başlık --%>
-      <asp:BoundField DataField="Title" HeaderText="Başlık" />
+  <%-- Başlık --%>
+  <asp:BoundField DataField="Title" HeaderText="Başlık" />
 
-      <%-- Bağlantı --%>
-      <asp:HyperLinkField DataNavigateUrlFields="Url" DataTextField="Url" HeaderText="Bağlantı" />
+  <%-- CrossRef Bağlantısı --%>
+  <asp:HyperLinkField DataNavigateUrlFields="Url"
+                      DataTextField="Url"
+                      HeaderText="Bağlantı"
+                      Target="_blank" />
 
-      <%-- Not + Kaydet --%>
-      <asp:TemplateField HeaderText="Not">
-        <ItemTemplate>
-          <div class="d-flex gap-2">
-            <asp:TextBox ID="txtNote" runat="server" CssClass="form-control form-control-sm"
-                         Text='<%# Bind("Note") %>' />
-            <asp:LinkButton runat="server" CssClass="btn btn-sm btn-primary"
-                            CommandName="saveNote"
-                            CommandArgument='<%# Eval("Id") %>'>Kaydet</asp:LinkButton>
-          </div>
-        </ItemTemplate>
-      </asp:TemplateField>
+  <asp:TemplateField HeaderText="Aç">
+  <ItemTemplate>
+    <!-- PDF varsa -->
+    <asp:PlaceHolder ID="phPdf" runat="server"
+      Visible='<%# !string.IsNullOrEmpty(Convert.ToString(Eval("PdfPath"))) %>'>
+      <a class="btn btn-sm btn-outline-primary me-1" target="_blank"
+         href='<%# "/SecureFile.ashx?id=" + Eval("Id") %>'>PDF Aç</a>
+    </asp:PlaceHolder>
 
-      <%-- Okundu --%>
-      <asp:TemplateField HeaderText="Okundu">
-        <ItemTemplate>
-          <asp:CheckBox ID="chkRead" runat="server"
-                        Checked='<%# Convert.ToBoolean(Eval("IsRead")) %>'
-                        AutoPostBack="true"
-                        OnCheckedChanged="ChkReadChanged" />
-        </ItemTemplate>
-      </asp:TemplateField>
+    <!-- HTML varsa -->
+    <asp:PlaceHolder ID="phHtml" runat="server"
+      Visible='<%# !string.IsNullOrEmpty(Convert.ToString(Eval("HtmlPath"))) %>'>
+      <a class="btn btn-sm btn-outline-secondary me-1" target="_blank"
+         href='<%# "/SecureFile.ashx?id=" + Eval("Id") %>'>HTML Aç</a>
+    </asp:PlaceHolder>
 
-      <%-- Sil --%>
-      <asp:TemplateField HeaderText="İşlem">
-        <ItemTemplate>
-          <asp:LinkButton runat="server" CommandName="remove"
-                          CommandArgument='<%# Eval("Id") %>'
-                          CssClass="btn btn-sm btn-outline-danger">Sil</asp:LinkButton>
-        </ItemTemplate>
-      </asp:TemplateField>
-    </Columns>
+    <!-- İkisi de yoksa -->
+    <asp:PlaceHolder ID="phNone" runat="server"
+      Visible='<%# string.IsNullOrEmpty(Convert.ToString(Eval("PdfPath"))) 
+                && string.IsNullOrEmpty(Convert.ToString(Eval("HtmlPath"))) %>'>
+      <span class="text-muted me-2">Yerel kopya yok</span>
+      <a class="btn btn-sm btn-outline-dark" target="_blank"
+         href='<%# Eval("Url") %>'>Orijinal</a>
+    </asp:PlaceHolder>
+  </ItemTemplate>
+</asp:TemplateField>
+
+
+
+  <%-- Not + Kaydet --%>
+  <asp:TemplateField HeaderText="Not">
+    <ItemTemplate>
+      <div class="d-flex gap-2">
+        <asp:TextBox ID="txtNote" runat="server" CssClass="form-control form-control-sm"
+                     Text='<%# Bind("Note") %>' />
+        <asp:LinkButton runat="server" CssClass="btn btn-sm btn-primary"
+                        CommandName="saveNote"
+                        CommandArgument='<%# Eval("Id") %>'>Kaydet</asp:LinkButton>
+      </div>
+    </ItemTemplate>
+  </asp:TemplateField>
+
+  <%-- Okundu --%>
+  <asp:TemplateField HeaderText="Okundu">
+    <ItemTemplate>
+      <asp:CheckBox ID="chkRead" runat="server"
+                    Checked='<%# Convert.ToBoolean(Eval("IsRead")) %>'
+                    AutoPostBack="true"
+                    OnCheckedChanged="ChkReadChanged" />
+    </ItemTemplate>
+  </asp:TemplateField>
+
+  <%-- Sil --%>
+  <asp:TemplateField HeaderText="İşlem">
+    <ItemTemplate>
+      <asp:LinkButton runat="server" CommandName="remove"
+                      CommandArgument='<%# Eval("Id") %>'
+                      CssClass="btn btn-sm btn-outline-danger">Sil</asp:LinkButton>
+    </ItemTemplate>
+  </asp:TemplateField>
+</Columns>
+
   </asp:GridView>
 
 </asp:Content>

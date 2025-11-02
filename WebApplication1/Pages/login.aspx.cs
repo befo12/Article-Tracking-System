@@ -69,18 +69,18 @@ namespace WebApplication1.Pages
                 lblMsg.Text = "Giriş hatası: " + Server.HtmlEncode(ex.Message);
             }
         }
-
         private void AfterAuthSuccess(int userId, string displayName, string email)
         {
             Session["UserId"] = userId;
-            Session["userEmail"] = email;
+            Session["Email"] = (email ?? string.Empty).Trim(); // <-- user.Email değil, parametre email
             Session["displayName"] = displayName;
 
-            // Kritik: LoginView'ın Auth template'ine geçmesi için cookie set
-            FormsAuthentication.SetAuthCookie(email, false);
+            // LoginView'ın Auth template'ine geçmesi için
+            FormsAuthentication.SetAuthCookie(email ?? string.Empty, false);
 
             SafeRedirect("~/Pages/Dashboard.aspx");
         }
+
 
         private void SafeRedirect(string url)
         {

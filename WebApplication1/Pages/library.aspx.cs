@@ -90,10 +90,11 @@ namespace WebApplication1.Pages
                 }
 
                 cmd.CommandText = @"
-SELECT Id, UserId, Title, Url, Note, IsRead, AddedDate
+SELECT Id, UserId, Title, Url, Note, IsRead, AddedDate, PdfPath, HtmlPath
 FROM Library
 " + where + @"
 ORDER BY AddedDate DESC, Id DESC;";
+
 
                 var dt = new DataTable();
                 con.Open();

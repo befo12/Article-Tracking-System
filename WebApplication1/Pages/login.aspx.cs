@@ -1,6 +1,8 @@
-﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web.Security;
 using System.Web.UI;
 
@@ -8,84 +10,64 @@ namespace WebApplication1.Pages
 {
     public partial class LoginPage : Page
     {
-        private string Cs => ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-
-        protected void Page_Load(object sender, EventArgs e)
+        protected async void btnLogin_Click(object sender, EventArgs e)
         {
-            lblDbg.Text = (IsPostBack ? "POSTBACK: true" : "POSTBACK: false")
-                          + " | Method=" + Request.HttpMethod
-                          + " | FormKeys=" + Request.Form.Count;
+            await LoginProcessAsync();
+        }
 
-            if (!IsPostBack && Request.QueryString["logout"] == "1")
+        private async Task LoginProcessAsync()
+        {
+            string email = txtEmail.Text.Trim();
+            string pass = txtPassword.Text.Trim();
+
+            if (email.Length == 0 || pass.Length == 0)
             {
-                lblMsg.CssClass = "text-muted";
-                lblMsg.Text = "Çıkış yapıldı.";
+                lblMsg.CssClass = "text-danger";
+                lblMsg.Text = "E-posta ve şifre zorunlu.";
+                return;
             }
-        }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            DoLogin();
-        }
+            var payload = new { Email = email, Password = pass };
 
-        private void DoLogin()
-        {
-            lblMsg.CssClass = "text-danger d-block mb-2";
-            var email = (txtEmail.Text ?? "").Trim();
-            var pass = txtPassword.Text ?? "";
+            string json = JsonConvert.SerializeObject(payload);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            try
+            // Sertifika doğrulama sorunu çözümü
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback =
+                (sender, cert, chain, sslPolicyErrors) => true;
+
+            using (var client = new HttpClient(handler))
             {
-                // DEMO kullanıcı
-                if (email.Equals("demo@site.local", StringComparison.OrdinalIgnoreCase) && pass == "123456")
+                var res = await client.PostAsync("https://localhost:44397/api/users/login", content);
+
+                if (!res.IsSuccessStatusCode)
                 {
-                    AfterAuthSuccess(1, "Demo Kullanıcı", email);
+                    lblMsg.CssClass = "text-danger";
+                    lblMsg.Text = "Giriş hatalı.";
                     return;
                 }
 
-                using (var con = new SqlConnection(Cs))
-                using (var cmd = new SqlCommand(
-                    "SELECT Id, ISNULL(Name,'') AS Name FROM Users WHERE Email=@e AND Password=@p", con))
-                {
-                    cmd.Parameters.AddWithValue("@e", email);
-                    cmd.Parameters.AddWithValue("@p", pass); // MVP: düz metin
-                    con.Open();
-                    using (var r = cmd.ExecuteReader())
-                    {
-                        if (r.Read())
-                        {
-                            int uid = Convert.ToInt32(r["Id"]);
-                            string name = Convert.ToString(r["Name"]);
-                            AfterAuthSuccess(uid, name, email);
-                            return;
-                        }
-                    }
-                }
+                // JSON body’yi al
+                string body = await res.Content.ReadAsStringAsync();
 
-                lblMsg.Text = "E-posta veya şifre hatalı.";
+                // JSON’u parse et
+                dynamic data = JsonConvert.DeserializeObject(body);
+
+                int userId = data.userId;
+                string displayName = data.displayName;
+
+                // Session bilgileri
+                Session["UserId"] = userId;
+                Session["displayName"] = displayName;
+                Session["Email"] = email;
+
+                // Authentication cookie
+                FormsAuthentication.SetAuthCookie(email, false);
+
+                // Dashboard’a yönlendir
+                Response.Redirect("~/Pages/Dashboard.aspx", false);
             }
-            catch (Exception ex)
-            {
-                lblMsg.Text = "Giriş hatası: " + Server.HtmlEncode(ex.Message);
-            }
-        }
-        private void AfterAuthSuccess(int userId, string displayName, string email)
-        {
-            Session["UserId"] = userId;
-            Session["Email"] = (email ?? string.Empty).Trim(); // <-- user.Email değil, parametre email
-            Session["displayName"] = displayName;
-
-            // LoginView'ın Auth template'ine geçmesi için
-            FormsAuthentication.SetAuthCookie(email ?? string.Empty, false);
-
-            SafeRedirect("~/Pages/Dashboard.aspx");
-        }
-
-
-        private void SafeRedirect(string url)
-        {
-            Response.Redirect(ResolveUrl(url), false);
-            Context.ApplicationInstance.CompleteRequest();
         }
     }
 }

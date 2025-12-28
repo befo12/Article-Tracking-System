@@ -60,6 +60,24 @@ namespace WebApplication1.Pages
         protected global::System.Web.UI.WebControls.Label lblQuickMsg;
 
         /// <summary>
+        /// litTopic denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTopic;
+
+        /// <summary>
+        /// updWeekly denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updWeekly;
+
+        /// <summary>
         /// rptWeekly denetimi.
         /// </summary>
         /// <remarks>

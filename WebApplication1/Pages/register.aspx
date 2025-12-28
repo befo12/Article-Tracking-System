@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Kayıt Ol" Language="C#"
+﻿<%@ Page  Async="true"  Title="Kayıt Ol" Language="C#"
     MasterPageFile="~/Master/Site.Master"
     AutoEventWireup="true"
     CodeBehind="Register.aspx.cs"

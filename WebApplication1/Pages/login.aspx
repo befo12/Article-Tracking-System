@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Giriş" Language="C#"
+﻿<%@ Page Async="true" Title="Giriş" Language="C#"
     MasterPageFile="~/Master/Site.Master"
     AutoEventWireup="true"
     CodeBehind="Login.aspx.cs"

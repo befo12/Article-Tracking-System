@@ -15,15 +15,6 @@ namespace WebApplication1.Pages
     {
 
         /// <summary>
-        /// sm denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager sm;
-
-        /// <summary>
         /// upd denetimi.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace WebApplication1.Pages
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVenue;
+
+        /// <summary>
+        /// ddlLang denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLang;
 
         /// <summary>
         /// txtYearFrom denetimi.

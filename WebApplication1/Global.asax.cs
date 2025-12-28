@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Security;
+using System.Web.Http;
 
 namespace WebApplication1
 {
@@ -8,9 +9,8 @@ namespace WebApplication1
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            // İstersen unobtrusive validation'ı kapat:
-            // System.Web.UI.ValidationSettings.UnobtrusiveValidationMode =
-            //     System.Web.UI.UnobtrusiveValidationMode.None;
+            
+            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
 
         protected void Application_PostAuthenticateRequest(object sender, EventArgs e)

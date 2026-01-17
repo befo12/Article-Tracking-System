@@ -1,0 +1,33 @@
+﻿.note-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.note-box {
+    width: 100%;
+    min-height: 32px;
+    font-size: 14px;
+    padding: 6px 8px;
+    transition: all .2s ease;
+    resize: none;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    /* Normal — tek satır görünüm */
+    .note-box.collapsed {
+        height: 32px !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+/* Odaklanınca açılır */
+note-box.expanded {
+    height: 120px !important;
+    white-space: normal;
+    overflow-y: auto;
+    resize: vertical;
+}

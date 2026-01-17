@@ -1,0 +1,632 @@
+<!DOCTYPE html><html lang="tr"><head><!--
+	Yazılım Geliştirme: COREBYTE TEKNOLOJİ YAZILIM DAN. TİC. LTD. ŞTİ
+	www.corebytetech.com
+	0850 360 6789
+	--><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DOI | KYS - Kongre Yönetim Sistemi</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/fontawesome-free/css/all.min.css?v1="><link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css?v=1"><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/flag-icon-css/css/flag-icon.min.css"><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/css/adminlte.min.css?v=1"><link rel="shortcut icon" href="https://panel.bidgecongress.org/uploads/db74675fc974ad6e1e4c5900babaae41.png" type="image/x-icon" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /><script src="https://panel.bidgecongress.org/assets/js/plugins/jquery/jquery.min.js?v=1"></script><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/css/custom.css?v=2"><style>
+        /* disable interaction with input, select readonly */
+        input[readonly], select[readonly] {
+            pointer-events: none;
+        }
+    </style></head><body class="hold-transition sidebar-mini layout-navbar-fixed"><div class="wrapper"><div class="preloader flex-column justify-content-center align-items-center"><img class="animate__animated preloaderAnimate" src="https://panel.bidgecongress.org/uploads/82ee87662716b0b004988ce195f2d185.png" alt="Loading" width="80"><br/><img src="https://panel.bidgecongress.org/assets/images/loading.gif" /></div><nav class="main-header navbar navbar-expand navbar-white navbar-light border-bottom-0"><!-- Left navbar links --><ul class="navbar-nav animate"><li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a></li><li class="nav-item d-none d-sm-inline-block"><a href="./" class="nav-link"><i class="fas fa fa-home"></i> Anasayfa</a></li><li class="nav-item d-none d-sm-inline-block"><a href="./events" class="nav-link"><i class="fas fa fa-calendar-alt"></i> Etkinlikler</a></li><li class="nav-item d-none d-sm-inline-block"><a href="./login" class="nav-link"><i class="fas fa fa-lock"></i> Üye Girişi</a></li><li class="nav-item d-none d-sm-inline-block"><a href="./register" class="nav-link"><i class="fas fa fa-user-plus"></i> Yeni Üyelik</a></li></ul><ul class="navbar-nav ml-auto"><li class="nav-item dropdown"></li><li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" href="#"><i class="flag-icon flag-icon-tr"></i></a><div class="dropdown-menu dropdown-menu-right p-0"><a href="./change-lang?l=tr" class="dropdown-item"><i class="flag-icon flag-icon-tr mr-2"></i> Türkçe</a><a href="./change-lang?l=en" class="dropdown-item"><i class="flag-icon flag-icon-us mr-2"></i> English</a></div></li></ul></nav><aside class="main-sidebar sidebar-dark-primary elevation-4"><a href="./" class="brand-link"><img src="uploads/db74675fc974ad6e1e4c5900babaae41.png" alt="Logo" class="brand-image img-circle"><span class="brand-text font-weight-light">KYS - Kongre Yönetim Sistemi</span></a><div class="sidebar"><nav class="mt-2"><ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false"><li class="nav-item"><a href="./" class="nav-link"><i class="nav-icon fas fa-home"></i><p>Anasayfa</p></a></li><li class="nav-item"><a href="./events" class="nav-link"><i class="nav-icon fas fa-calendar-alt"></i><p>Etkinlikler</p></a></li><li class="nav-item"><a href="./my-applications" class="nav-link"><i class="nav-icon fas fa-calendar-check"></i><p>Bildirilerim</p></a></li><li class="nav-item"><a href="./my-applications?book=1" class="nav-link"><i class="nav-icon fas fa-book"></i><p>Kitap Bölümlerim</p></a></li><li class="nav-item"><a href="./listener-references" class="nav-link"><i class="nav-icon fas fa-headset"></i><p>Dinleyici Başvurularım</p></a></li><li class="nav-item"><a href="./take-part-in-events" class="nav-link "><i class="nav-icon fas fa-handshake"></i><p>Etkinliklerde Görev Al</p></a></li><li class="nav-item"><a href="./event-code-verify" class="nav-link "><i class="nav-icon fas fa-check-square"></i><p>Etkinlik Kod Girişi</p></a></li><li class="nav-item"><a href="./my-payments" class="nav-link"><i class="nav-icon fas fa-money-check"></i><p>Ödeme ve Fatura</p></a></li><li class="nav-item"><a href="./my-certificates" class="nav-link "><i class="nav-icon fas fa-certificate"></i><p>Sertifikalarım</p></a></li><li class="nav-item"><a href="./my-acceptance" class="nav-link "><i class="nav-icon fas fa-envelope-open"></i><p>Kabul Mektuplarım</p></a></li><li class="nav-item"><a href="./my-invitations" class="nav-link "><i class="nav-icon fas fa-envelope-open"></i><p>Davet Yazılarım & Sözleşmelerim</p></a></li><li class="nav-item"><a href="./publications" class="nav-link "><i class="nav-icon fas fa-book-open"></i><p>Yayınlar</p></a></li><li class="nav-item"><a href="./my-editor-panel" class="nav-link"><i class="nav-icon fas fa-balance-scale"></i><p>Editörlük Görevlerim</p></a></li><li class="nav-item"><a href="./my-messages" class="nav-link"><i class="nav-icon fas fa-envelope"></i><p>Mesajlar</p></a></li><li class="nav-item"><a href="./profile" class="nav-link"><i class="nav-icon fas fa-id-card-alt"></i><p>Profil</p></a></li></ul></nav></div></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js" integrity="sha512-Z8CqofpIcnJN80feS2uccz+pXWgZzeKxDsDNMD/dJ6997/LSRY+W4NmEt9acwR+Gt9OHN0kkI1CTianCwoqcjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><div class="content-wrapper"><div class="content-header"></div><div class="content"><div class="container-fluid"><div class="row"><div class="col-lg-12 col-md-12"><div class="card"><div class="card-header"><h3 class="card-title">DOI Detayları</h3><div class="card-tools"><a href="#doidetails" class="btn btn-sm btn-primary mx-1">DOI Detayları <i class="fas fa-arrow-down"></i></a><a href="/download?folder=books&file=6905404bc985e8df6f5c4e61153b5192.pdf&orgname=1" class="btn btn-sm btn-danger"><i class="fa fa-file-pdf"></i> PDF İndir</a></div></div><div class="card-body text-center"><h3>Pratik Yapay Zeka Uygulamaları 1</h3><iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://panel.bidgecongress.org/uploads/books/6905404bc985e8df6f5c4e61153b5192.pdf" style="width: 100%; height: 600px;" frameborder="0"></iframe><h4 class='mt-5' id='doidetails'>Kitap DOI Numarası: 10.70269/1SGGQRVWKY4L - DOI İçerik Detayları</h4><div class='d-block d-sm-none text-warning'>Tablo verileri için sağa-sola kaydırınız.</div><div class='table-responsive'><table class='table table-bordered table-striped'><thead><tr><th>Bildiri Başlığı</th><th>Yazarlar</th><th>Sayfalar</th><th>Kitap DOI</th><th>Bölüm DOI</th></tr></thead><tbody><tr><td>Makine Öğrenmesi ve Derin Öğrenme Algoritmalarının Kredi Kartı Dolandırıcılığı Tespitindeki Başarılarının İncelenmesi</td><td>AYSE BERNA ALTINEL, DİLEK GÜN, ELİF ÖZCEYLAN</td><td>5 - 27</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/4647435366'>10.70269/10.70269/4647435366</a></td></tr><tr><td>Kanser Genomiğinde Yapay Zeka ve Makine Öğrenimi</td><td>EYYÜP GÜLBANDILAR</td><td>28 - 54</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/3799467758'>10.70269/10.70269/3799467758</a></td></tr><tr><td>Türkçe Metinlerde Anahtar Kelime Çıkarımı: Lda, Rake ve Berturk Yöntemlerinin Karşılaştırmalı Analizi</td><td>KADİR TOHMA, HALİL İBRAHİM OKUR</td><td>55 - 74</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/5634688943'>10.70269/10.70269/5634688943</a></td></tr><tr><td>Türk Dilleri İçin Doğal Dil İşleme: Zorluklar, Ortak Özellikler ve Çözümler</td><td>HALİL İBRAHİM OKUR, KADİR TOHMA</td><td>75 - 97</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/6315439141'>10.70269/10.70269/6315439141</a></td></tr><tr><td>Farksal Gelişim (de) Algoritması</td><td>UĞUR TALAŞ</td><td>98 - 120</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/7585855581'>10.70269/10.70269/7585855581</a></td></tr><tr><td>Derin Öğrenme Teknikleri ve Uygulamaları</td><td>ALPER TALHA KARADENİZ</td><td>121 - 152</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/5254673883'>10.70269/10.70269/5254673883</a></td></tr><tr><td>Güncel Metasezgisel Optimizasyon Algoritmalarının Cec2020 Test Fonksiyonları ile Değerlendirilmesi</td><td>RABİA UYAR</td><td>153 - 181</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/2876441421'>10.70269/10.70269/2876441421</a></td></tr><tr><td>Mobil Uygulama ile Domates Yaprak Görüntülerinden Hastalık Teşhisi</td><td>OĞUZHAN SEÇGEL, KAMİL ORMAN</td><td>182 - 198</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/2127424331'>10.70269/10.70269/2127424331</a></td></tr><tr><td>White-label Platform as A Service For Sports Clubs</td><td>ROBBERT OOMENS, OZAN ÜST</td><td>199 - 205</td><td><a href='https://doi.org/10.70269/1SGGQRVWKY4L'>10.70269/1SGGQRVWKY4L</a></td><td><a href='https://doi.org/10.70269/10.70269/2196335377'>10.70269/10.70269/2196335377</a></td></tr></tbody></table></div></div></div></div></div></div></div></div><div class="modal fade" id="modal-embed-file"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Dosya Görüntüleme <span id="googleLoadingWarning">- Dosya yükleniyor <span style="color: red;">Görüntüleme yapamıyorsanız dosyayı indirebilirsiniz</span><img src="https://panel.bidgecongress.org/assets/images/loading.gif" /></span></h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body" id="modal-body"><div style="text-align: center;"><i>Lütfen bekleyin, dosya Google servisleri üzerinden görüntüleniyor...</i></div></div><div class="modal-footer justify-content-between"><button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button><a href="" id="downloadFileModal" class="btn btn-primary"><i class="fa fa-download"></i> Dosyayı İndir</a></div></div></div></div><div class="modal fade" id="help-videos"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Yardım İçeriği</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><div style="text-align: center;"><i>Lütfen bekleyin...</i></div></div><div class="modal-footer justify-content-between"><button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button></div></div></div></div><aside class="control-sidebar control-sidebar-dark"></aside><footer class="main-footer text-sm"><!--<strong>Krc Bilişim Ticaret ve Organizasyon Limited Şirketi</strong>
+     &copy; 2025 Tüm hakları saklıdır --><a href="./privacy" style="color: inherit;">Gizlilik & KVKK</a> &bull; 
+	 <a href="./mesafeli-satis-sozlesmesi" style="color: inherit;">Mesafeli Satış Sözleşmesi</a> &bull; 
+	 <a href="./teslimat-iade-kosullari" style="color: inherit;">Teslimat & İade Koşulları</a> &bull; 
+	 <a href="https://www.bidgecongress.org/hakkimizda/" target="_blank" style="color: inherit;">Hakkımızda</a> &bull; 
+	 <a href="https://www.bidgecongress.org/iletisim/" target="_blank" style="color: inherit;">İletişim</a><img src="./assets/images/logo_band_colored@2x.png" style="width: 250px; margin-left: 20px;" alt="iyzico ödeme alt yapısı" /><div class="float-right d-none d-sm-inline-block" style="font-size: 12px !important;"><b>V.1.2 - Last Update 251220232100</b> - <a href="https://www.corebytetech.com" rel="nofollow" target="_blank">CoreByte Teknoloji</a> &bull;
+        <a href="https://flexode.me" title="tahsilat yazılımı">Tahsilat Yazılımı</a></div><div class="text-center mb-md-2 mt-md-2 d-block d-sm-none" style="font-size: 12px !important; margin: 20px 0;"><b>V.1.2 - Last Update 251220232100</b> - <a href="https://www.corebytetech.com" rel="nofollow" target="_blank">CoreByte Teknoloji</a>  &bull;
+        <a href="https://flexode.me" title="tahsilat yazılımı">Tahsilat Yazılımı</a></div></footer></div><div style="position: fixed; top: 50%; right: 0px; background: #d5705f; color: #fff; writing-mode: vertical-rl; text-orientation: mixed; padding-top: 8px; padding-bottom: 8px; font-size: 2.3vh; cursor: pointer;" id="help-static">
+	YARDIM
+</div><div id="IframeArea"></div><script src="https://panel.bidgecongress.org/assets/js/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- sweat --><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css"><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/toastr/toastr.min.css"><script src="https://panel.bidgecongress.org/assets/js/plugins/sweetalert2/sweetalert2.min.js"></script><script src="https://panel.bidgecongress.org/assets/js/plugins/toastr/toastr.min.js"></script><!-- --><!-- textarea editor --><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/summernote/summernote-bs4.min.css"><script src="https://panel.bidgecongress.org/assets/js/plugins/summernote/summernote-bs4.min.js"></script><!-- --><script src="https://panel.bidgecongress.org/assets/js/plugins/chart.js/Chart.min.js"></script><!-- date time --><script src="https://panel.bidgecongress.org/assets/js/plugins/moment/moment.min.js"></script><script src="https://panel.bidgecongress.org/assets/js/plugins/inputmask/jquery.inputmask.min.js"></script><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/daterangepicker/daterangepicker.css"><script src="https://panel.bidgecongress.org/assets/js/plugins/daterangepicker/daterangepicker.js"></script><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"><script src="https://panel.bidgecongress.org/assets/js/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script><!-- --><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/select2/css/select2.min.css"><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"><script src="https://panel.bidgecongress.org/assets/js/plugins/select2/js/select2.full.min.js"></script><link rel="stylesheet" href="https://panel.bidgecongress.org/assets/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css?v=6"><script src="https://panel.bidgecongress.org/assets/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js?v=5"></script><script src="https://panel.bidgecongress.org/assets/js/adminlte.js"></script><script src="https://panel.bidgecongress.org/assets/js/pages/dashboard3.js"></script><script src="https://panel.bidgecongress.org/assets/js/jquery.cookie.js"></script><style>
+	.swal-wide-cookie{
+		width:850px;
+	}
+</style><script>
+$(function() {
+	$(document).on("click",".side-panel .side-panel-label", function () {
+		var iframeId = $(this).data("iframe-id");
+		$("#"+iframeId).remove();
+		$("body").removeClass("side-panel-disable-scrollbar");
+	});
+	
+	$(document).on("click","#help-static", function (e) {
+
+		e.preventDefault();
+		var module_color = "#d5705f";
+		var url = "/help";
+
+		var rn = Math.floor(Math.random() * 10000) + 1;
+		$("#IframeArea").append(''+
+			'<div class="side-panel d-none side-panel-overlay" style="position: absolute; z-index: 9999999999 !important; left: 0px; top: 0; right: 0px; height: 0px; background-color: rgba(0, 0, 0, 0.4);" id="iframe_'+rn+'">'+
+			'<div class="side-panel side-panel-show-shadow side-panel-container" style="width: calc(100% - '+($(window).width()/2)+'px); height: 0px; transform: translateX(0%);">'+
+				'<div class="side-panel-content-container">'+
+					'<iframe src="#" frameborder="0" class="side-panel-iframe" name="iframe_'+rn+'" id="f_'+rn+'"></iframe>'+
+				'</div>'+
+				'<div class="side-panel-labels" style="top: 17px;">'+
+					'<div class="side-panel-label" style="background-color: '+module_color+'; max-width: 278px;" data-iframe-id="iframe_'+rn+'">'+
+						'<div class="side-panel-label-icon-box" title="Kapat">'+
+							'<div class="side-panel-label-icon side-panel-label-icon-close"></div>'+
+							'<div class="side-panel-label-icon side-panel-label-icon-external"><i class="fa fa-external-link-alt"></i></div>'+
+						'</div>'+
+						'<span class="side-panel-label-text"></span>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+		'</div>');
+		$("#iframe_"+rn+" .side-panel-label-text").html("Yardım");
+		$("#iframe_"+rn+"").removeClass("d-none").addClass("d-block").fadeIn("slow").addClass("side-panel-overlay-open");
+		$("#iframe_"+rn+".side-panel .side-panel-iframe").attr("src", url);
+		$("body").addClass("side-panel-disable-scrollbar");
+		var topReference = $(window).scrollTop();
+		$("#iframe_"+rn+"").css("height", $(window).height()).css("top", topReference+"px");
+		$("#iframe_"+rn+" .side-panel-container").css("height", $(window).height());
+
+	});
+
+	
+				if($.cookie('popup-2') != 'dontShow'){
+					Swal.fire({
+					html: '<h1><a href=\"https://www.bidgeyayinlari.com.tr/yayinlar-2/\"><span style=\"font-size:26px\"><strong>25 HAZİRAN 2025 KİTAP B&Ouml;L&Uuml;M&Uuml; HAKKINDA DUYURU TIKLAYINIZ...</strong></span></a></h1>',
+					showCancelButton: true,
+					cancelButtonText: 'Kapat',
+					cancelButtonColor: '#3085d6',
+					confirmButtonColor: '#d33',
+					confirmButtonText: 'Tekrar Gösterme',
+					
+					
+				}).then((result)=>{
+					if(result.isConfirmed){
+						$.cookie('popup-2', 'dontShow');
+					}
+					
+				});
+			
+
+				}
+				// Global defines
+	var baglac_list = [" a ", " And ", " The ", " Of ", " In ", " İn ", " Into ", " İnto ", " On ", " At ", " Out ", " During ", " Between ", " With ", " Without ", " By ", " As ", " Against ", " Ve ", " İle "];
+
+	// Show bootstrap tab url hash
+	var hash = location.hash.replace(/^#/, '');
+	if (hash) {
+		$('.nav-tabs a[href="#' + hash + '"]').tab('show');
+	}
+	$('.nav-tabs a').click(function (e) {
+		$(this).tab('show');
+		var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+		window.location.hash = this.hash;
+		$('html,body').scrollTop(scrollmem);
+	});
+	//
+	
+	$(document).on("input", ".numeric", function() {
+		this.value = this.value.replace(/[^0-9\.-]/g,'');
+	});
+	
+	$('.editor').summernote({
+		height: 300,
+        toolbar: [
+            [ 'style', [ 'style' ] ],
+            [ 'font', [ 'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear'] ],
+            [ 'fontname', [ '' ] ],
+            [ 'fontsize', [ '' ] ],
+            [ 'color', [ 'color' ] ],
+            [ 'para', [ 'ol', 'ul', 'paragraph', '' ] ],
+            [ 'table', [ ] ],
+            [ 'insert', [ 'link'] ],
+            [ 'view', [ 'undo', 'redo', 'fullscreen' ] ]
+        ]
+	});
+	$('.select2').select2({theme: 'bootstrap4'});
+    $(document).on('select2:open', () => {
+        let searchField = $('.select2-search__field');
+        if (searchField.length > 0) {
+            searchField.attr('placeholder', 'Aramak için buraya yazın..');
+        }
+    });
+	$('.select2-dont-close').select2({theme: 'bootstrap4', closeOnSelect: false});
+	$("[data-toggle='tooltip']").tooltip();
+
+	$('[data-mask]').inputmask();
+	$('.datepicker').datetimepicker({
+        format: 'DD/MM/YYYY',
+		locale: 'tr'
+    });
+	$('.datepicker-range').daterangepicker({
+		locale: {
+			format: 'DD/MM/YYYY',
+			firstDay: 0,
+			applyLabel: "Uygula",
+			cancelLabel: "İptal",
+			fromLabel: "Buradan",
+			toLabel: "Buraya",
+			daysOfWeek: ["Pt","Sa","Çş","Pr","Cm","Ct","Pa"],
+			monthNames: ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"]
+		}	
+	});
+
+	$('input[type="file"]').change(function(e) {
+		var tid = $(this).attr("id");
+        var fileName = $(this).val();
+		if (fileName == "") {
+			fileName = "Dosya Seç";
+		}
+		$(this).next('.custom-file-label').html(fileName);
+    });
+	$(document).on("click", ".youtube", function(e) {
+		e.preventDefault();
+		var url = $(this).data("embed");
+		$("#help-videos").modal("show");
+		$("#help-videos .modal-body").html('<iframe width="100%" height="650" src="https://www.youtube.com/embed/'+url+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
+
+	});
+	$('#help-videos').on('hidden.bs.modal', function () {
+		$('#help-videos .modal-body').empty();
+	});
+
+	$(document).on("click", ".delete", function(e) {
+		e.preventDefault();
+		var href = $(this).data("url");
+		var reload = $(this).data("reload");
+		var after_do = $(this).data("after");
+		Swal.fire({
+		  title: 'Emin misiniz?',
+		  text: $(this).data("content")+" Bu işlem geri alınamaz.",
+		  icon: 'warning',
+		  showLoaderOnConfirm: true,
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Evet, Tamamen Sil',
+		  allowEscapeKey: false,
+		
+			preConfirm: () => {
+
+				 return new Promise(function (resolve) {
+
+					$.ajax({
+						url: href,
+						method: 'POST',
+						dataType: 'json',
+						data:{},
+						success: function(resp)
+						  {
+							
+							if (resp.result == 1) {
+							  Swal.fire({
+									icon: 'success',
+									title: 'İşlem Başarılı!',
+									html: 'Veri silme işlemi tamamlandı'
+								}).then(function() {
+									if (reload == 1) {
+										window.location.reload();
+									}
+									if (after_do != "") {
+										eval(after_do);
+									}
+								});
+							}else{
+								Swal.fire({
+									icon: 'error',
+									title: 'İşlem Başarısız!',
+									html: 'Veri silme işlemi sırasında hata oluştu'
+								}).then(function() {
+									
+								});
+							}
+						  }
+					})
+				 })
+          },
+		  allowOutsideClick: () => !Swal.isLoading()
+		});
+	});
+
+	$(document).on("click",".show_file",function() {
+		$('span#googleLoadingWarning').show();
+		var url = $(this).data("url");
+		var isEmbed = $(this).data("is-embed");
+		var directLink = url.replace("https://mozilla.github.io/pdf.js/web/viewer.html?file=","");
+		var folderName = directLink.replace("https://panel.bidgecongress.org/uploads/","");
+		var fileNameExtract = folderName.split("/");
+		var downloadFolder, downloadFile;
+		if (fileNameExtract.length > 2) {
+			downloadFolder = fileNameExtract[0] + "/" + fileNameExtract[1];
+			downloadFile = fileNameExtract[2];
+		}else{
+			downloadFolder = fileNameExtract[0];
+			downloadFile = fileNameExtract[1];
+		}
+		
+
+		if (isEmbed == "1") {
+			$("#modal-embed-file").modal("show");
+			$("#modal-body").html("<iframe src='"+url+"' style='width: 100%; height: 600px;' frameborder='0' id='googleIframe' onload='removeLoadingWarning();'></iframe>");
+			$("#downloadFileModal").attr("href","/download?folder="+downloadFolder+"&file="+downloadFile);
+		}else{
+			openNewTab(url);
+		}
+	});
+
+    // interval 2 minutes keep session alive
+    setInterval(function() {
+        $.ajax({
+            url: "./ajax-root?action=keepSession",
+            method: "POST",
+            data: {}
+        });
+    }, 120000);
+
+
+		
+	
+
+	$(".article_title_en").on('focusout', function(e) {
+		var text = $(this).val();
+		var new_text = text.turkishCapitalizeWords();
+        if ($("select[name='form_presentation_lang']").length > 0) {
+            if ($("select[name='form_presentation_lang']").val() == "Turkish") {
+                new_text = text.turkishToUpper();
+                new_text = new_text.toUpperCase();
+            }
+            if ($("select[name='form_presentation_lang']").val() == "English") {
+                // replace İ to I
+                new_text = new_text.toUpperCase().replace(/İ/g, "I");
+            }
+        }
+		new_text = BaglacCheck(new_text, baglac_list);
+		$(this).val(new_text);
+	});
+	$(".article_title_tr").on('focusout', function(e) {
+		var text = $(this).val();
+		var new_text = text.turkishCapitalizeWords();
+		new_text = BaglacCheck(new_text, baglac_list);
+		$(this).val(new_text);
+	});
+		
+
+
+
+});
+function removeLoadingWarning() {
+	$('span#googleLoadingWarning').hide();
+}
+function RemoveInput(x) {
+	$(x).remove();
+}
+function AddEventField() {
+	var toplam_alan = $(".alan").length;
+	var i = toplam_alan + 1;
+	$("#etkinlik_alanlari").append("<div class='col-md-4 alan' id='alan_"+i+"'>"+
+	"<input type='text' name='etkinlik_alanlari[]' class='form-control' style='display: inline-block; width: 90%;' placeholder='Sosyoloji, Antrolopoloji, Arkeoloji vb' />"+
+	" <a href='javascript:;' onclick=\"RemoveInput('#alan_"+i+"')\" class='btn btn-danger'><i class='fa fa-trash-alt'></i></a></div>");
+}
+
+function SwalAjaxSave(href,postData,swal_title="İşlem Onayı",swal_text="Verileri kaydetmek istediğinize emin misiniz?",extraSuccessCallBackJSCode="",extraErrorCallBackJSCode="") {
+
+	Swal.fire({
+	  title: swal_title,
+	  html: swal_text,
+	  icon: 'warning',
+	  showLoaderOnConfirm: true,
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: 'Evet, Devam Et',
+	  allowEscapeKey: false,
+      preConfirm: () => {
+
+		  return new Promise(function (resolve) {
+
+				$.ajax({
+					url: href,
+					method: 'POST',
+					dataType: 'json',
+					enctype: 'multipart/form-data',
+					processData: false,
+					contentType: false,
+					data: postData
+				}).done(function(resp) {
+					if (resp.result == 1) {
+						
+						 Swal.fire({
+							icon: 'success',
+							title: 'İşlem Başarılı!',
+							html: 'Verileri kaydetme işlemi başarılı.'
+						}).then(function() {
+							if (extraSuccessCallBackJSCode != "") {
+								extraSuccessCallBackJSCode();
+							}
+							if (resp.goTo != "") {
+								window.location.href = resp.goTo;
+								if (resp.hard_reload == 1) {
+									location.reload();
+								}
+							}
+						});
+					 
+					}
+                    else{
+						var res_text = "";
+						if (resp.result_text != "") {
+							res_text = " " +resp.result_text;
+						}
+						if(resp.banka != ""){
+							window.location.href = resp.goTo;
+						}else{
+							Swal.fire({
+								icon: 'error',
+								title: 'İşlem Başarısız!',
+								html: 'Verileri kaydetme işlemi sırasında hata oluştu.'+res_text
+							}).then(function() {
+								if (extraErrorCallBackJSCode != "") {
+									extraErrorCallBackJSCode();
+								}
+								if (resp.goTo != "") {
+									window.location.href = resp.goTo;
+									location.reload();
+								}
+							});
+						}
+						
+					}
+				}).fail(function(jqXHR, textStatus, errorThrown) {
+                    var message;
+                    if (textStatus === 'error' && jqXHR.status === 0) {
+                        message = 'Ağ bağlantısı hatası (ERR_FAILED). Lütfen internet bağlantınızı veya güvenlik duvarı/antivirüs ayarlarınızı kontrol edin.';
+                    }
+                    else if (errorThrown && errorThrown.indexOf('ERR_FAILED') !== -1) {
+                        message = 'Sunucuya ulaşılamadı (ERR_FAILED).';
+                    }
+                    else {
+                        message = 'Verileri kaydetme işlemi sırasında hata oluştu: ' + (errorThrown || textStatus);
+                    }
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'İşlem Başarısız!',
+                        html: message
+                    }).then(function() {
+                        if (typeof extraErrorCallBackJSCode === 'function') {
+                            extraErrorCallBackJSCode();
+                        }
+                    });
+                });
+          });
+	  },
+	  allowOutsideClick: () => !Swal.isLoading()
+	});
+
+}
+
+function SaveAuthorToSession(edit_key) {
+
+	var arr = [];
+	$('.saveme').each(function() {
+		arr.push({'value': $(this).val(), 'name': $(this).attr('name')});
+	});
+
+	var href = "./ajax-root?action=save_author_to_session&edit_key="+edit_key;
+	var jsonstring = JSON.stringify({postdata: arr});
+
+	//$('.author_div_saved table > tbody > tr').remove();
+	//$('.author_div_saved table > tbody').append('<tr><td colspan=\'12\' class=\'text-center\'>Yenileniyor...</td></tr>');
+	
+	var swal_title = 'Yazarı kaydet?';
+	var swal_text = 'Bu bildiride yer alacak yazarı kaydetmek istiyor musunuz? Daha sonra alt tablodan düzenleme ve silme işlemi gerçekleştirebilirsiniz.';
+	SwalAjaxSave(href,jsonstring,swal_title,swal_text,GetAuthorSessionList,GetAuthorSessionList);
+
+}
+
+function RemoveAuthorFromSession(key) {
+	var jsonstring = JSON.stringify({"key": key});
+	var href = './ajax-root?action=RemoveAuthorFromSession';
+	var swal_title = 'Yazarı listeden sil?';
+	var swal_text = 'Bu bildiride yer alacak yazarı silmek istiyor musunuz?';
+	SwalAjaxSave(href,jsonstring,swal_title,swal_text,GetAuthorSessionList,GetAuthorSessionList);
+}
+function EditAuthorFromSession(key) {
+	$("div.author_div").show();
+	$("input[name='author_editing']").val(key);
+
+	$.ajax({
+		url: './ajax-root?',
+		method: 'POST',
+		dataType: 'json',
+		data: 'action=get_session_author_id&id='+key
+	}).done(function(resp) {
+		if (resp.result_data != ""){
+			var json_result = $.parseJSON(resp.result_data);
+			$.each(json_result, function(k, v) {
+				if ($("input[name='"+k+"']").length) {
+					$("input[name='"+k+"']").val(v);
+				}else if ($("select[name='"+k+"']").length) {
+					$("select[name='"+k+"']").val(v);
+				}else if ($("textarea[name='"+k+"']").length) {
+					$("textarea[name='"+k+"']").html(v);
+				}
+			});
+		}
+	});
+}
+function GetAuthorSessionList() {
+
+	$('.author_div').hide();
+
+	$('.author_div_saved table > tbody').append('<tr><td colspan=\'12\' class=\'text-center\'><i>LÜTFEN BEKLEYİN, KAYDETTİĞİNİZ YAZAR LİSTESİ GETİRİLİYOR...</i></td></tr>');
+
+	$.ajax({
+		url: './ajax-root?',
+		method: 'POST',
+		dataType: 'json',
+		data: 'action=get_session_authors'
+	}).done(function(resp) {
+		$('.author_div_saved table > tbody > tr').remove();
+
+		if (resp.result == 1) {
+			if (resp.result_data != ""){
+				var json_result = $.parseJSON(resp.result_data);
+				var total_records = Object.keys(json_result).length;
+				var i=1;
+				$.each(json_result, function(index, element) {
+					var is_responsible_text = "Hayır";
+					if (element.is_responsible == "1") {
+						is_responsible_text = "Evet";
+					}
+					if (element.author_orcid == null) {
+						element.author_orcid = "";
+					}
+                    var kacinci_bolum_yazari = "";
+                    if (element.kacinci_bolum_yazari > 0) {
+                        kacinci_bolum_yazari = element.kacinci_bolum_yazari;
+                    }
+                    					$('.author_div_saved table > tbody').append('<tr id="reorder_'+index+'" data-index="'+index+'"><td style="cursor: move;">'+element.author_number+'</td><td>'+is_responsible_text+'</td><td>'+element.author_name+'</td><td>'+element.author_surname+'</td><td>'+element.author_title+'</td><td>'+element.author_university+'</td><td>'+element.author_department+'</td><td>'+element.author_email+'</td><td>'+element.author_phone+'</td><td>'+element.author_city+'</td><td>'+element.author_country+'</td><td>'+element.author_orcid+'</td><td width="120"><a href=\'javascript:;\' class=\'btn btn-info btn-sm\' onclick=\'EditAuthorFromSession('+index+')\'><i class=\'fa fa-edit\'></i></a><a href=\'javascript:;\' class=\'btn btn-danger btn-sm\' onclick=\'RemoveAuthorFromSession('+index+')\'><i class=\'fa fa-trash-alt\'></i></a></td></tr>');
+                    					i++;
+				});
+
+			}else{
+				//$('.author_div_saved table > tbody').append('<tr><td colspan=\'12\' class=\'text-center\'><i>Bildirinizde yer alan herhangi bir yazar eklemediniz. Yazar eklemek için sağ üstteki butonu kullanınız. <u>Lütfen kendinizi de yazar olarak eklemeyi unutmayınız!</u></i></td></tr>');
+				// Hiç yazar eklenmediği için kendisini de yazar olarak otomatik ekleyeceğiz.
+				$.ajax({
+					url: './ajax-root?',
+					method: 'POST',
+					dataType: 'json',
+					data: 'action=save_author_to_session_myself'
+				}).done(function(resp) {
+					GetAuthorSessionList();
+				});
+			}
+			// Kaydettikten sonra formu sıfırla
+			$('.saveme').each(function() {
+				var input_name = $(this).attr('name');
+				var tip = $(this).get(0).tagName;
+				var val = $(this).val();
+				$(tip+"[name="+input_name+"]").val("");
+			});
+			$("input[name='author_editing']").val("");
+
+		}
+	});
+	
+}
+
+function BaglacCheck(text, arr) {
+	var result = 0;
+	for(var i=0; i<arr.length; i++) {
+		var baglac = arr[i];
+		text = text.replace(baglac, baglac.turkishLowerCase());
+	}
+	return text;
+}
+function EventApply_AuthorChecks(event_type) {
+	$.ajax({
+		url: './ajax-root?',
+		method: 'POST',
+		dataType: 'json',
+		data: 'action=event_apply_author_rule_checks&event_type='+event_type
+	}).done(function(resp) {
+		if (resp.result == 1) {
+			return true;
+		}else{
+			Swal.fire({
+			  icon: 'error',
+			  title: 'Hata',
+			  text: resp.result_data,
+			});
+			return false;
+		}
+	});
+}
+function openNewTab(link) {
+    var frm = $('<form method="get" action="' + link + '" target="_blank"></form>')
+    $("body").append(frm);
+    frm.submit().remove();
+}
+
+
+function BuyukHarf(selector) {
+	var val = $(selector).val();
+	var new_val = val.turkishToUpper();
+	$(selector).val(new_val);
+}
+
+String.prototype.turkishToUpper = function(){
+	var string = this;
+	var letters = { "i": "İ", "ş": "Ş", "ğ": "Ğ", "ü": "Ü", "ö": "Ö", "ç": "Ç", "ı": "I" };
+	string = string.replace(/(([iışğüçö]))/g, function(letter){ return letters[letter]; })
+	return string.toUpperCase();
+}
+String.prototype.turkishUpperCase = function () {
+    return this.replace(/ğ/g, 'Ğ')
+        .replace(/ü/g, 'Ü')
+        .replace(/ş/g, 'Ş')
+        .replace(/ı/g, 'I')
+        .replace(/i/g, 'İ')
+        .replace(/ö/g, 'Ö')
+        .replace(/ç/g, 'Ç')
+        .toUpperCase();
+}//String.turkishUpperCase()
+
+String.prototype.turkishLowerCase = function () {
+    return this.replace(/Ğ/g, 'ğ')
+        .replace(/Ü/g, 'ü')
+        .replace(/Ş/g, 'ş')
+        .replace(/I/g, 'ı')
+        .replace(/İ/g, 'i')
+        .replace(/Ö/g, 'ö')
+        .replace(/Ç/g, 'ç')
+        .toLowerCase();
+}//String.turkishLowerCase()
+
+String.prototype.turkishCapitalize = function() {
+    return this.charAt(0).turkishUpperCase() + this.slice(1).turkishLowerCase()
+}//String.turkishCapitalize()
+
+String.prototype.turkishCapitalizeWords = function() {
+	var string = this;
+    var a = string.toString().split(' ');
+    for(var i=0;i < a.length; i++) a[i] = a[i].turkishCapitalize();
+    return a.join(' ');
+}//String.turkishCapitalizeWords()
+
+</script><script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script><script>
+    $('.phone').inputmask("(999) 999-9999");
+    $(document).on("focusout",".phone",function(){
+        var $ths = $(this);
+        if($ths.val().charAt(1) == "0"){
+            Swal.fire({
+                icon: 'warning',
+                title: 'UYARI',
+                text: 'Telefon numarası 0 ile başlayamaz. Lütfen düzeltiniz.'
+            });
+            $ths.val("");
+        }
+    });
+    // all input type text focout event, trim and check email valid
+    $(document).on("focusout","input[type='email']",function(){
+        var $ths = $(this);
+        $ths.val($ths.val().trim());
+        if($ths.val() != ""){
+            if(!validateEmail($ths.val())){
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'UYARI',
+                    html: 'Girilen e-posta geçersiz! Lütfen kontrol ediniz.<br>'+$ths.val()
+                });
+                $ths.val("");
+            }
+            // epostada türkçe karakterler olamaz, ı, ş, ğ, ü, ö, ç
+            if($ths.val().indexOf("ı") > -1 || $ths.val().indexOf("ş") > -1 || $ths.val().indexOf("ğ") > -1 || $ths.val().indexOf("ü") > -1 || $ths.val().indexOf("ö") > -1 || $ths.val().indexOf("ç") > -1){
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'UYARI',
+                    html: 'E-posta adresleri Latin harfler dışında harf içeremez! Lütfen kontrol ediniz.<br>'+$ths.val()
+                });
+                $ths.val("");
+            }
+        }
+    });
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"96771ef07ccb46c98c4b2c4b85f79a30","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

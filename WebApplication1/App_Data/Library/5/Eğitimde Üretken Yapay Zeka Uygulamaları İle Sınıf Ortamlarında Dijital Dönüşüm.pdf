@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+<html lang="tr-TR" xml:lang="tr-TR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Eğitimde Teknoloji Entegrasyonu: Yapay Zeka ve Dijitalleşme Perspektifleri
+							| Özgür Yayınları
+			</title>
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	
+	
+	
+<meta name="generator" content="Açık Kitap Sistemleri 3.3.0.13">
+<link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Uğur Büyük"/>
+<meta name="DC.Creator.PersonalName" content="İsmail Eraslan"/>
+<meta name="DC.Creator.PersonalName" content="Büşra Arık Güngör"/>
+<meta name="DC.Creator.PersonalName" content="Sibel Saraçoğlu"/>
+<meta name="DC.Creator.PersonalName" content="Hanife Çetingüney"/>
+<meta name="DC.Creator.PersonalName" content="Uğur Büyük"/>
+<meta name="DC.Creator.PersonalName" content="Ezgi Pelin Yıldız"/>
+<meta name="DC.Creator.PersonalName" content="Mine Kaya"/>
+<meta name="DC.Creator.PersonalName" content="Osman Pişginel"/>
+<meta name="DC.Creator.PersonalName" content="Gülşah Güler"/>
+<meta name="DC.Creator.PersonalName" content="Damla Şahin"/>
+<meta name="DC.Creator.PersonalName" content="Melike Erdil"/>
+<meta name="DC.Creator.PersonalName" content="Şule Şahin Doğruer"/>
+<meta name="DC.Creator.PersonalName" content="Basem Almoghrbel "/>
+<meta name="DC.Creator.PersonalName" content="Wael Moughrbel"/>
+<meta name="DC.Creator.PersonalName" content="Mehmet Yavuz"/>
+<meta name="DC.Creator.PersonalName" content="Sohret Sagban"/>
+<meta name="DC.Creator.PersonalName" content="Cemil Yucel"/>
+<meta name="DC.Creator.PersonalName" content="Cavide Demirci"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2025-06-24"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-06-23"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2025-06-28"/>
+<meta name="DC.Description" xml:lang="tr" content="Yapay zekâ ve dijitalleşmenin, eğitimin DNA'sını yeniden yazdığı bu kritik kavşakta, teknoloji entegrasyonunu anlamak artık bir seçenek değil, bir zorunluluktur. Bu kitap yapay zekâ ve dijitalleşmenin eğitimdeki rolünü, yalnızca bir araç seti olarak değil, öğretmen kimliğini, öğrenme süreçlerini, pedagojik paradigmaları ve etik temelleri kökten dönüştüren bir güç olarak ele almaktadır. Kitap, alanında uzman yazarların kaleminden çıkan bölümlerle, bu çok katmanlı dönüşümü disiplinlerarası bir yaklaşımla incelemektedir.Kitapta teknolojinin eğitime entegrasyonu; Posthümanizm, dijital emek ve eleştirel pedagoji gibi kuramsal çerçevelerden, öğretmenlerin dijital yeterlikleri, Z kuşağının teknoloji algıları ve özerk öğrenme gibi pratik ve güncel tartışmalara uzanan geniş bir yelpazede analiz edilmektedir. Matematik, dil ve fen bilimleri gibi farklı disiplinlerde yapay zekânın somut uygulamaları, fırsatları ve riskleri detaylandırılırken; üretken yapay zekâ araçlarının ve chatbotların eğitimdeki potansiyeli somut örneklerle ortaya konulmaktadır.Bu kitap, eğitimde teknolojik dönüşümün sadece “nasıl”ını değil, aynı zamanda “neden”ini ve “ne için”ini de sorgulamayı amaçlamaktadır. Akademisyenlere, politika yapıcılara, öğretmenlere ve geleceğin eğitimcilerine, yapay zekâ çağında eğitimi anlamak ve şekillendirmek için eleştirel, derinlikli ve bütüncül bir bakış açısı sunmayı hedeflemektedir."/>
+<meta name="DC.Description" xml:lang="en" content="At this critical juncture, where artificial intelligence and digitalization are rewriting the very DNA of education, understanding technology integration is no longer an option, but an imperative. This book examines the role of artificial intelligence and digitalization in education not merely as a set of tools, but as a transformative force that fundamentally reshapes teacher identity, learning processes, pedagogical paradigms, and ethical foundations. Through chapters authored by experts in the field, the book analyzes this multi-layered transformation with an interdisciplinary approach.Within the book, the integration of technology in education is analyzed across a broad spectrum, extending from theoretical frameworks such as Posthumanism, digital labor, and critical pedagogy, to practical and contemporary discussions on teacher digital competencies, the technology perceptions of Generation Z, and autonomous learning. While the concrete applications, opportunities, and risks of AI in various disciplines such as mathematics, language, and science are detailed, the potential of generative AI tools and chatbots in education is demonstrated with tangible examples.This book aims to question not only the “how” of technological transformation in education, but also its “why” and “for what”. It seeks to offer academics, policymakers, teachers, and future educators a critical, in-depth, and holistic perspective for understanding and shaping education in the age of artificial intelligence."/>
+<meta name="DC.Identifier" content="773"/>
+<meta name="DC.Identifier.DOI" content="10.58830/ozgur.pub773"/>
+<meta name="DC.Identifier.URI" content="https://www.ozguryayinlari.com/site/catalog/book/773"/>
+<meta name="DC.Language" scheme="ISO639-1" content="tr"/>
+<meta name="DC.Rights" content="Telif Hakkı (c) 2025 Uğur Büyük; İsmail Eraslan, Büşra Arık Güngör, Sibel Saraçoğlu, Hanife Çetingüney, Uğur Büyük, Ezgi Pelin Yıldız, Mine Kaya, Osman Pişginel, Gülşah Güler, Damla Şahin, Melike Erdil, Şule Şahin Doğruer, Basem Almoghrbel , Wael Moughrbel, Mehmet Yavuz, Sohret Sagban, Cemil Yucel, Cavide Demirci"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc/4.0"/>
+<meta name="DC.Source" content="Özgür Yayınları"/>
+<meta name="DC.Source.URI" content="https://www.ozguryayinlari.com/site"/>
+<meta name="DC.Subject" xml:lang="tr" content="Yapay Zekâ"/>
+<meta name="DC.Subject" xml:lang="tr" content="Teknoloji Entegrasyonu"/>
+<meta name="DC.Subject" xml:lang="tr" content="Dijitalleşme"/>
+<meta name="DC.Subject" xml:lang="tr" content="Öğretmen Yeterlikleri"/>
+<meta name="DC.Subject" xml:lang="tr" content="Pedagojik Paradigmalar"/>
+<meta name="DC.Subject" xml:lang="en" content="Artificial Intelligence"/>
+<meta name="DC.Subject" xml:lang="en" content="Technology Integration"/>
+<meta name="DC.Subject" xml:lang="en" content="Digitalization"/>
+<meta name="DC.Subject" xml:lang="en" content="Teacher Competencies"/>
+<meta name="DC.Subject" xml:lang="en" content="Pedagogical Paradigms"/>
+<meta name="DC.Title" content="Eğitimde Teknoloji Entegrasyonu: Yapay Zeka ve Dijitalleşme Perspektifleri"/>
+<meta name="DC.Title.Alternative" xml:lang="en" content="Technology Integration in Education: Artificial Intelligence and Digitalization Perspectives"/>
+<meta name="DC.Type" content="Text.Book"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_title" content="Eğitimde Teknoloji Entegrasyonu: Yapay Zeka ve Dijitalleşme Perspektifleri"/>
+<meta name="citation_publication_date" content="2025/06/24"/>
+<meta name="citation_author" content="Uğur Büyük"/>
+<meta name="citation_author" content="İsmail Eraslan"/>
+<meta name="citation_author" content="Büşra Arık Güngör"/>
+<meta name="citation_author" content="Sibel Saraçoğlu"/>
+<meta name="citation_author" content="Hanife Çetingüney"/>
+<meta name="citation_author" content="Uğur Büyük"/>
+<meta name="citation_author" content="Ezgi Pelin Yıldız"/>
+<meta name="citation_author" content="Mine Kaya"/>
+<meta name="citation_author" content="Osman Pişginel"/>
+<meta name="citation_author" content="Gülşah Güler"/>
+<meta name="citation_author" content="Damla Şahin"/>
+<meta name="citation_author" content="Melike Erdil"/>
+<meta name="citation_author" content="Şule Şahin Doğruer"/>
+<meta name="citation_author" content="Basem Almoghrbel "/>
+<meta name="citation_author" content="Wael Moughrbel"/>
+<meta name="citation_author" content="Mehmet Yavuz"/>
+<meta name="citation_author" content="Sohret Sagban"/>
+<meta name="citation_author" content="Cemil Yucel"/>
+<meta name="citation_author" content="Cavide Demirci"/>
+<meta name="citation_abstract" xml:lang="tr" content="Yapay zekâ ve dijitalleşmenin, eğitimin DNA'sını yeniden yazdığı bu kritik kavşakta, teknoloji entegrasyonunu anlamak artık bir seçenek değil, bir zorunluluktur. Bu kitap yapay zekâ ve dijitalleşmenin eğitimdeki rolünü, yalnızca bir araç seti olarak değil, öğretmen kimliğini, öğrenme süreçlerini, pedagojik paradigmaları ve etik temelleri kökten dönüştüren bir güç olarak ele almaktadır. Kitap, alanında uzman yazarların kaleminden çıkan bölümlerle, bu çok katmanlı dönüşümü disiplinlerarası bir yaklaşımla incelemektedir.Kitapta teknolojinin eğitime entegrasyonu; Posthümanizm, dijital emek ve eleştirel pedagoji gibi kuramsal çerçevelerden, öğretmenlerin dijital yeterlikleri, Z kuşağının teknoloji algıları ve özerk öğrenme gibi pratik ve güncel tartışmalara uzanan geniş bir yelpazede analiz edilmektedir. Matematik, dil ve fen bilimleri gibi farklı disiplinlerde yapay zekânın somut uygulamaları, fırsatları ve riskleri detaylandırılırken; üretken yapay zekâ araçlarının ve chatbotların eğitimdeki potansiyeli somut örneklerle ortaya konulmaktadır.Bu kitap, eğitimde teknolojik dönüşümün sadece “nasıl”ını değil, aynı zamanda “neden”ini ve “ne için”ini de sorgulamayı amaçlamaktadır. Akademisyenlere, politika yapıcılara, öğretmenlere ve geleceğin eğitimcilerine, yapay zekâ çağında eğitimi anlamak ve şekillendirmek için eleştirel, derinlikli ve bütüncül bir bakış açısı sunmayı hedeflemektedir."/>
+<meta name="citation_abstract" xml:lang="en" content="At this critical juncture, where artificial intelligence and digitalization are rewriting the very DNA of education, understanding technology integration is no longer an option, but an imperative. This book examines the role of artificial intelligence and digitalization in education not merely as a set of tools, but as a transformative force that fundamentally reshapes teacher identity, learning processes, pedagogical paradigms, and ethical foundations. Through chapters authored by experts in the field, the book analyzes this multi-layered transformation with an interdisciplinary approach.Within the book, the integration of technology in education is analyzed across a broad spectrum, extending from theoretical frameworks such as Posthumanism, digital labor, and critical pedagogy, to practical and contemporary discussions on teacher digital competencies, the technology perceptions of Generation Z, and autonomous learning. While the concrete applications, opportunities, and risks of AI in various disciplines such as mathematics, language, and science are detailed, the potential of generative AI tools and chatbots in education is demonstrated with tangible examples.This book aims to question not only the “how” of technological transformation in education, but also its “why” and “for what”. It seeks to offer academics, policymakers, teachers, and future educators a critical, in-depth, and holistic perspective for understanding and shaping education in the age of artificial intelligence."/>
+<meta name="citation_doi" content="10.58830/ozgur.pub773"/>
+<meta name="citation_keywords" xml:lang="tr" content="Yapay Zekâ"/>
+<meta name="citation_keywords" xml:lang="tr" content="Teknoloji Entegrasyonu"/>
+<meta name="citation_keywords" xml:lang="tr" content="Dijitalleşme"/>
+<meta name="citation_keywords" xml:lang="tr" content="Öğretmen Yeterlikleri"/>
+<meta name="citation_keywords" xml:lang="tr" content="Pedagojik Paradigmalar"/>
+<meta name="citation_keywords" xml:lang="en" content="Artificial Intelligence"/>
+<meta name="citation_keywords" xml:lang="en" content="Technology Integration"/>
+<meta name="citation_keywords" xml:lang="en" content="Digitalization"/>
+<meta name="citation_keywords" xml:lang="en" content="Teacher Competencies"/>
+<meta name="citation_keywords" xml:lang="en" content="Pedagogical Paradigms"/>
+<meta name="citation_isbn" content="978-625-5646-10-1"/>
+<meta name="citation_pdf_url" content="https://www.ozguryayinlari.com/site/catalog/download/773/3704/8194"/>
+<meta name="citation_publisher" content="Özgür Yayınları"/>
+	<link rel="stylesheet" href="https://www.ozguryayinlari.com/site/$$$call$$$/page/page/css?name=bootstrapTheme-spacelab" type="text/css" /><link rel="stylesheet" href="https://www.ozguryayinlari.com/plugins/themes/ozgurTheme/styles/ozgur.css?v=0.0.1" type="text/css" /><link rel="stylesheet" href="https://www.ozguryayinlari.com/public/presses/1/styleSheet.css?d=2023-04-17+21%3A12%3A10" type="text/css" /><link rel="stylesheet" href="https://www.ozguryayinlari.com/public/presses/1/styleSheet.css?v=3.3.0.13" type="text/css" />
+</head>
+<body class="pkp_page_catalog pkp_op_book has_site_logo">
+	<div class="pkp_structure_page">
+
+		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="Quick jump to page content">
+			<ul>
+			  <li><a href="#main-navigation">Main Navigation</a></li>
+			  <li><a href="#main-content">Main Content</a></li>
+			  <li><a href="#sidebar">Sidebar</a></li>
+			</ul>
+		</nav>
+
+
+			<div class="header-top">
+	<div class="container">
+
+		<div class="row">
+			<nav aria-label="Kullanıcı Haritası">
+				  <ul id="" class="nav nav-pills-header tab-list pull-left">
+    <li class=" dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+       Türkçe
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="locale_tr_TR current"
+          lang="">
+          <a
+            href="https://www.ozguryayinlari.com/site/user/setLocale/tr_TR?source=%2Fsite%2Fcatalog%2Fbook%2F773%2Fchapter%2F3203">
+            Türkçe
+          </a>
+        </li>
+        <li class="locale_en_US"
+          lang="">
+          <a
+            href="https://www.ozguryayinlari.com/site/user/setLocale/en_US?source=%2Fsite%2Fcatalog%2Fbook%2F773%2Fchapter%2F3203">
+            English
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+					<ul id="navigationUser" class="nav nav-pills-header tab-list pull-right">
+																<li class="">
+				<a href="https://www.ozguryayinlari.com/site/user/register" >
+					Kayıt
+									</a>
+							</li>
+														<li class="">
+				<a href="https://www.ozguryayinlari.com/site/login" >
+					Giriş
+									</a>
+							</li>
+										</ul>
+
+			</nav>
+		</div><!-- .row -->
+	</div><!-- .container-fluid -->
+	</div><!-- .container-fluid -->
+	
+				<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
+
+
+			<div class="container">
+
+				<div class="navbar-header">
+
+										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="nav-menu">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+																<div class="site-name">
+																								<a href="							https://www.ozguryayinlari.com/site/index
+						" class="navbar-brand navbar-brand-logo">
+								<img src="https://www.ozguryayinlari.com/public/presses/1/pageHeaderLogoImage_tr_TR.png" alt="ÖZGÜR YAYINLARI">
+							</a>
+																	</div>
+					
+				</div>
+
+								
+									<nav id="nav-menu" class="navbar-collapse collapse" aria-label="Site Haritası">
+			
+
+																			<div class="pull-md-right">
+								<form name="ozgurSearch" class="navbar-form navbar-left ozgur-nav" role="search" method="post" action="https://www.ozguryayinlari.com/site/search/search">
+  <div class="input-group input-box">
+    <input class="form-control" name="query" value="" type="search"
+      aria-label="Arama Sorgusu" placeholder="Ara">
+    <span class="search">
+        <span class="glyphicon glyphicon-search search-icon" aria-hidden="true"></span>
+    </span>
+    <span class="glyphicon glyphicon-remove close-icon" aria-hidden="true"></span>
+  </div>
+</form>
+							</div>
+						
+																		<ul id="main-navigation" class="nav navbar-nav">
+					<li class="">
+				<a href="/">
+				Anasayfa
+				</a>
+			</li>
+																							<li class=" dropdown">
+				<a href="https://www.ozguryayinlari.com/site/about"  class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+					Hakkımızda
+											<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu ">
+																					<li class="">
+									<a href="https://www.ozguryayinlari.com/site/history-of-ozgur-press">
+										Biz kimiz?
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/brand-identity">
+										Kurumsal Kimlik
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/aim-and-scope">
+										Amaç ve Kapsam
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/code-of-conduct">
+										Yayın İlkelerimiz
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/privacy-policy">
+										Gizlilik Bildirimi
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/about/editorialTeam">
+										Yayın Kurulu
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/books">
+										Kitaplarımız
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/instructions-for-authors">
+										Yazar Kılavuzu
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/about/submissions">
+										Yeni Başvuru
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/contact">
+										İletişim
+									</a>
+								</li>
+																		</ul>
+							</li>
+																					<li class=" dropdown">
+				<a href="https://www.ozguryayinlari.com/site/policies"  class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+					İlkeler
+											<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu ">
+																					<li class="">
+									<a href="https://www.ozguryayinlari.com/site/publication-ethics">
+										Yayın Etiği
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/peer-review">
+										İnceleme Süreci
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/open-access">
+										Açık Erişim
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/copyrighting">
+										Telif Hakkı
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/publisher-archiving-policies">
+										Arşiv Politikası
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/book-processing-charge">
+										Kitap İşleme Ücreti
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/ozgur-press-privacy-policy">
+										KVKK Bildirimi
+									</a>
+								</li>
+																		</ul>
+							</li>
+																					<li class=" dropdown">
+				<a href="https://www.ozguryayinlari.com/site/catalog"  class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+					Kitaplar
+											<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu ">
+																					<li class="">
+									<a href="https://www.ozguryayinlari.com/site/catalog">
+										E-Kitaplar
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/printed-books">
+										Basılı Kitaplar
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://www.ozguryayinlari.com/site/baskisi-tukenen-yayinlar">
+										Baskısı Tükenenler
+									</a>
+								</li>
+																		</ul>
+							</li>
+														<li class="">
+				<a href="https://www.ozguryayinlari.com/site/ozgur-press-dissemination" >
+					Yaygınlık
+									</a>
+							</li>
+														<li class="">
+				<a href="https://www.ozguryayinlari.com/site/kitap-bolumu" >
+					Kitap Bölümü
+									</a>
+							</li>
+														<li class="">
+				<a href="https://www.ozguryayinlari.com/site/submission" >
+					Başvuru
+									</a>
+							</li>
+														<li class="">
+				<a href="https://www.ozguryayinlari.com/site/contact" >
+					Bize Ulaşın
+									</a>
+							</li>
+			</ul>
+
+				
+					</nav>
+				
+			</div><!-- .pkp_head_wrapper -->
+
+		</header><!-- .pkp_structure_head -->
+						<div class="pkp_structure_content container">
+					<main class="pkp_structure_main col-xs-12" role="main">
+			
+<div class="page page_book">
+				 <div class="obj_monograph_full">
+
+  
+ 
+ 	  	  	  	 		 		 		 		 		 			 				 			 			 			 				 			 		 	  	  	  	  	  	  	  	  
+ 	 	  
+ <div class="row">
+	 <div class="bookdetail col-xs-12 col-md-8">
+		 <div class="bookdetail-inner">
+			 <div class="item cover">
+				 				 <img src="https://www.ozguryayinlari.com/public/presses/1/submission_773_791_coverImage_tr_TR_t.jpg"
+					 alt="">
+			 </div>
+			 <h2 class="title">
+				 Eğitimde Üretken Yapay Zeka Uygulamaları İle Sınıf Ortamlarında Dijital Dönüşüm
+				 <div class="subtitle">
+					 <b>Şu kitabın bölümü:</b>
+					 						 						 						 Büyük,
+						 							 U.
+						 					 					 						 							 (ed.)
+						 					 					 2025.
+					 <i>Eğitimde Teknoloji Entegrasyonu: Yapay Zeka ve Dijitalleşme Perspektifleri.</i>
+
+				 </div>
+			 </h2>
+			 <div class="item return-to-book">
+				 <a href="https://www.ozguryayinlari.com/site/catalog/book/773" class="btn btn-warning">
+					 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+					 Kitaba Git
+				 </a>
+			 </div>
+			 <div class="row authors">
+			<div class="col-sm-6 col-xs-12">
+			<div class="author-name">
+									Ezgi Pelin Yıldız
+							</div>
+							<div class="affiliation">
+					Kafkas Üniversitesi
+				</div>
+						
+		</div>
+	</div>
+			 			 
+
+			 				 <div class="item files">
+					 <h2 class="pkp_screen_reader">
+						 İndir
+					 </h2>
+					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 								 									 		
+<a target="_blank" rel="noopener noreferrer" href="https://www.ozguryayinlari.com/site/catalog/view/773/3708/8198" class="btn btn-primary">
+	<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+			Bölümü Oku
+	</a>
+<a href="https://www.ozguryayinlari.com/site/catalog/download/773/3708/8198" class="btn btn-default">
+	<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+	İndir
+</a>								 
+
+								 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 						 
+						 						 
+							 							 
+
+							 							 						 					 				 </div>
+			 			 				 <div class="item abstract">
+					 <h4>
+						 Özet
+					 </h4>
+					 <div class="value">
+						 <p>Bu kitap bölümünde, eğitim ortamlarında kaçınılmaz bir hal alan ve dijital dönüşüm süreçlerinin temellerinden biri olan Üretken Yapay Zeka (ÜYZ) teknolojilerinin modern sınıf ortamlarına entegresi ve etkileri tartışılacaktır. Üretken yapay zeka, metin, görsel, ses, video gibi çoklu ortam öğelerini ve içeriklerini otomatik olarak yapılandırabilen yapay zeka sistemlerinin tümünü kapsamaktadır. Bu bağlamda ÜYZ, klasik yapay zekadan farklı olarak salt veriyi analiz etmekle kalmaz; aynı zamanda yaratıcı süreçler kapsamında örüntüler öğrenip yeni veriler üretir. Bu teknolojiler günümüzde daha çok dil modelleri ve görüntü oluşturma, müzik-video üretimi gibi alanlarda varlığını göstermektedir. Eğitim paydaşları açısından değerlendirildiğinde; ÜYZ öğretim materyalleri geliştirme, öz değerlendirme ve geri bildirim sağlama gibi üst düzey beceriler doğrultusunda öğrencilerin öğrenme deneyimlerini zenginleştirmektedir. Bunun yanı sıra öğrenci seviyesine, hızına ve ilgi alanlarına göre ders materyalleri ve içerikler oluşturma, detaylı geri bildirimlerle öğrencilerin hatalarını hızlıca fark ettirme ve düzeltmelerini mümkün kılma, yaratıcı içerik üretme araçları ile öğrencilerin yaratıcılık becerilerini arttırma ve üretkenliklerini destekleme gibi birçok kazanımları da beraberinde getirmektedir. Özetle, üretken yapay zeka öğrencilerin öğrenme süreçlerini daha etkili, kişisel ve yaratıcı hale getirerek başarılarını arttırmaktadır. Öğretmenler açısından değerlendirildiğinde ise; öğretmenler, üretken yapay zekadan aldığı destekle sınıf ortamlarında yeni materyaller ve etkinlikler geliştirebilir, böylece yaratıcılıklarını geliştirebilirler. Ayrıca, öğrenci performansını analiz eden üretken yapay zeka araçları sayesinde zayıf noktaları hızlıca tespit edip, hedefli müdahalelerde bulunabilirler. Mesleki gelişim açısından da üretken yapay zeka, öğretmenlerin eğitim teknolojileri ve pedagojik yeniliklerden haberdar olmalarını kolaylaştırır. Sonuç olarak, üretken yapay zeka, sınıf ortamlarına entegre edilerek öğretim süreçlerini kişiselleştirir ve daha etkili hale getirir. Öğrencilerin ihtiyaçlarına göre uyarlanmış içerikler sunar, öğretmenlerin iş yükünü azaltır ve öğrenme deneyimini zenginleştirir. Böylece dijital dönüşüm, sınıflarda hem verimliliği artırır hem de pedagojik yeniliklere kapı aralar.</p>
+					 </div>
+				 </div>
+			 		 </div>
+		 	<div class="keywords">
+		<h4>
+						Anahtar Kelimeler:
+		</h4>
+		<div>
+							<a href="https://www.ozguryayinlari.com/site/search/search?query=Yapay Zekâ" class="keyword btn">
+					Yapay Zekâ
+				</a>
+							<a href="https://www.ozguryayinlari.com/site/search/search?query=Teknoloji Entegrasyonu" class="keyword btn">
+					Teknoloji Entegrasyonu
+				</a>
+							<a href="https://www.ozguryayinlari.com/site/search/search?query=Dijitalleşme" class="keyword btn">
+					Dijitalleşme
+				</a>
+							<a href="https://www.ozguryayinlari.com/site/search/search?query=Öğretmen Yeterlikleri" class="keyword btn">
+					Öğretmen Yeterlikleri
+				</a>
+							<a href="https://www.ozguryayinlari.com/site/search/search?query=Pedagojik Paradigmalar" class="keyword btn">
+					Pedagojik Paradigmalar
+				</a>
+					</div>
+	</div>
+	 </div>
+
+	 <div class="bookbar col-xs-12 col-md-4">
+		 <div class="item cover">
+			 			 <img src="https://www.ozguryayinlari.com/public/presses/1/submission_773_791_coverImage_tr_TR_t.jpg"
+				 alt="">
+		 </div>
+
+		 <div class="row">
+			 <div class="col-md-12">
+				 <h4>Kaynakça Gösterimi</h4>
+				 <div class="sideblock">
+					 						 						 						 Yıldız,
+						 							 E.
+						 							 P.
+						 					 					 (2025).
+					 Eğitimde Üretken Yapay Zeka Uygulamaları İle Sınıf Ortamlarında Dijital Dönüşüm.
+					 In:
+					 						 						 						 Büyük,
+						 							 U.
+						 					 					 						 							 (ed.),
+						 					 					 						 <i>Eğitimde Teknoloji Entegrasyonu: Yapay Zeka ve Dijitalleşme Perspektifleri.</i>
+					 					 Özgür Yayınları.
+					 						 DOI: <a href="https://doi.org/10.58830/ozgur.pub773.c3203">
+							 https://doi.org/10.58830/ozgur.pub773.c3203
+						 </a>
+					 				 </div>
+				 					 <h4>
+						 Lisans
+					 </h4>
+
+					 						 <div class="sideblock"><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="//i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><p>Bu çalışma  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> ile lisanslanmıştır.</p></div>
+					 				 				 					 <h4>
+						 Yayın Tarihi
+					 </h4>
+					 <div class="sideblock">
+						 							 24 June 2025
+							 						 					 </div>
+				 				 					 <h4>DOI</h4>
+					 <div class="sideblock">
+						 <a href="https://doi.org/10.58830/ozgur.pub773.c3203">
+							 https://doi.org/10.58830/ozgur.pub773.c3203
+						 </a>
+					 </div>
+				 			 </div>
+		 </div>
+		 			 <div class="categories row">
+				 <div class="col-md-12">
+					 <h4>
+						 Kategoriler
+					 </h4>
+					 <ul>
+						 							 <li>
+								 <a href="https://www.ozguryayinlari.com/site/catalog/category/egitim-bilimleri">
+									 Eğitim Bilimleri
+								 </a>
+							 </li>
+						 					 </ul>
+				 </div>
+			 </div>
+		 		 			 <div class="copyright row">
+				 <div class="col-md-12">
+					 <p>
+						 Telif Hakkı (c) 2025 Uğur Büyük; İsmail Eraslan, Büşra Arık Güngör, Sibel Saraçoğlu, Hanife Çetingüney, Uğur Büyük, Ezgi Pelin Yıldız, Mine Kaya, Osman Pişginel, Gülşah Güler, Damla Şahin, Melike Erdil, Şule Şahin Doğruer, Basem Almoghrbel , Wael Moughrbel, Mehmet Yavuz, Sohret Sagban, Cemil Yucel, Cavide Demirci
+					 </p>
+				 </div>
+			 </div>
+		 	 </div>
+
+
+ </div>
+
+</div><!-- .obj_monograph_full -->	
+	
+</div><!-- .page -->
+
+
+</main>
+
+
+<div class="scrolltop-wrap">
+  <a href="#" role="button" aria-label="Scroll to top">
+    <svg height="48" viewBox="0 0 48 48" width="48" height="48px" xmlns="http://www.w3.org/2000/svg">
+      <path id="scrolltop-bg" d="M0 0h48v48h-48z"></path>
+      <path id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"></path>
+    </svg>
+  </a>
+</div>
+</div><!-- pkp_structure_content -->
+
+<footer class="ozgur-footer">
+  <div class="ozgur-footer-p2">
+  <div class="container">
+  <div class="row">
+      <a href="">
+        <img alt="OMP / PKP tarafından yayıncılık sistemi, Platform ve İş Akışı hakkında daha fazla bilgi."
+          src="https://www.ozguryayinlari.com/templates/images/ozgur_footer_tr-TR.png">
+      </a>
+    <hr>
+    <div>
+      <ul class="list-inline">
+        <li><a href="/site/about">Yayınevi Hakkında</a></li>
+        <li><a href="/site/editorialTeam">Yayın Kurulu</a></li>
+        <li><a href="/site/catalog">Yayınlarımız</a></li>
+        <li><a href="/site/submissions">Gönderimler</a></li>
+        <li><a href="/site/indexes">İndeksler</a></li>
+        <li><a href="/site/kitap-bolumu">Kitap Bölümü Çağrısı</a></li>
+      </ul>
+    </div>
+    <hr>
+    <p>15 Temmuz Mah. 148136. Sokak No:9, 27560 Şehitkamil/Gaziantep<br>
+      <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="056c6b636a456a7f6270777c647c6c6b6964776c2b666a68">[email&#160;protected]</a><br>
+      0090 (850) 260 0997<br>
+    </p>
+    <ul class="list-inline ozgur-sm">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="https://twitter.com/zgrYaynlar1">Twitter</a></li>
+      <li><a href="https://www.instagram.com/ozgur_yayinlari">Instagram</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">Linkedin</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+
+<div class="ozgur-footer-p3">
+  <div class="container">
+    <div class="row row-middle">
+        <div class="col-md-5 col-sm-12 col-xs-12 ozgur-footer-p3-text-align"><p>© 2025 Özgür Yayınları | Tüm Hakları Saklıdır.</p></div>
+        <div class="col-md-7 col-sm-12 col-xs-12 text-right ozgur-footer-p3-text-align">
+          <a href="/site/about/privacy">Gizlilik Bildirimi</a>
+          <a href="/site/about/contact">Bize Ulaşın</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</footer>
+</div><!-- pkp_structure_page -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://www.ozguryayinlari.com/lib/pkp/lib/vendor/components/jquery/jquery.min.js?v=3.3.0.13" type="4e1fcd5aee7473fca32b5de2-text/javascript"></script><script src="https://www.ozguryayinlari.com/lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min.js?v=3.3.0.13" type="4e1fcd5aee7473fca32b5de2-text/javascript"></script><script src="https://www.ozguryayinlari.com/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js?v=3.3.0.13" type="4e1fcd5aee7473fca32b5de2-text/javascript"></script><script src="https://www.ozguryayinlari.com/plugins/themes/ozgurTheme/bootstrap/js/bootstrap.min.js?v=3.3.0.13" type="4e1fcd5aee7473fca32b5de2-text/javascript"></script><script src="https://www.ozguryayinlari.com/plugins/themes/ozgurTheme/styles/ozgur.js?v=0.0.1" type="4e1fcd5aee7473fca32b5de2-text/javascript"></script><script src="https://cdn-cookieyes.com/client_data/6429c8c1aac9ce92a493e2c4/script.js?v=3.3.0.13" type="4e1fcd5aee7473fca32b5de2-text/javascript"></script><script type="4e1fcd5aee7473fca32b5de2-text/javascript">
+(function (w, d, s, l, i) { w[l] = w[l] || []; var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
+j.src = 'https://www.googletagmanager.com/gtag/js?id=' + i + dl; f.parentNode.insertBefore(j, f); 
+function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', i); })
+(window, document, 'script', 'dataLayer', 'G-NQFTWFVGGQ');
+</script>
+
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="4e1fcd5aee7473fca32b5de2-|49" defer></script></body>
+</html>

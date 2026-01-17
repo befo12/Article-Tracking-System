@@ -15,6 +15,33 @@ namespace WebApplication1.Pages
     {
 
         /// <summary>
+        /// litFavCount denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litFavCount;
+
+        /// <summary>
+        /// litSearchCount denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litSearchCount;
+
+        /// <summary>
+        /// litRateCount denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litRateCount;
+
+        /// <summary>
         /// litName denetimi.
         /// </summary>
         /// <remarks>
@@ -51,21 +78,12 @@ namespace WebApplication1.Pages
         protected global::System.Web.UI.WebControls.Button btnAddKeyword;
 
         /// <summary>
-        /// gvKeywords denetimi.
+        /// rptKeywords denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvKeywords;
-
-        /// <summary>
-        /// lblInfo denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInfo;
+        protected global::System.Web.UI.WebControls.Repeater rptKeywords;
     }
 }

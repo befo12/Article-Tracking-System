@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="Controllers\KeywordsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="AppStart\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">

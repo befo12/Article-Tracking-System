@@ -41,6 +41,20 @@ namespace WebApplication1.Pages
         {
             string q = (txtQuery.Text ?? "").Trim();
             if (q.Length == 0) return;
+            // search.aspx.cs içine eklenecek mantık
+            // btnSearch_Click içindeki veritabanı kayıt kısmı
+            using (SqlConnection con = new SqlConnection(Cs))
+            {
+                // Veritabanı tablonuzdaki sütun adı 'SearchTerm' olduğu için burayı düzelttik
+                string sql = "INSERT INTO SearchHistory (UserId, SearchTerm, SearchDate) VALUES (@u, @q, GETDATE())";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@u", CurrentUserId);
+                cmd.Parameters.AddWithValue("@q", txtQuery.Text);
+
+                con.Open();
+                cmd.ExecuteNonQuery(); // Artık hata vermeyecek
+            }
 
             lblInfo.Text = "Aranıyor...";
 

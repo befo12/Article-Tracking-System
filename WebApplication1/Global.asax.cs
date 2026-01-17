@@ -12,7 +12,19 @@ namespace WebApplication1
             
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
+        protected void Application_PostAuthorizeRequest()
+        {
+            // API talepleri için Session desteğini etkinleştirir
+            if (IsWebApiRequest())
+            {
+                HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
+            }
+        }
 
+        private bool IsWebApiRequest()
+        {
+            return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath.StartsWith("~/api");
+        }
         protected void Application_PostAuthenticateRequest(object sender, EventArgs e)
         {
             var ctx = HttpContext.Current;

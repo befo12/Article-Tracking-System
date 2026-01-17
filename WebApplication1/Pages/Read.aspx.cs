@@ -38,33 +38,39 @@ namespace WebApplication1.Pages
             {
                 cmd.Parameters.AddWithValue("@id", ArticleId);
                 cmd.Parameters.AddWithValue("@uid", CurrentUserId);
-
                 con.Open();
                 var r = cmd.ExecuteReader();
-                if (!r.Read()) return;
-
-                lblTitle.Text = r["Title"].ToString();
-                txtNote.Text = r["Note"].ToString();
-                chkRead.Checked = Convert.ToBoolean(r["IsRead"]);
-
-                string pdf = r["PdfPath"].ToString();
-                string html = r["HtmlPath"].ToString();
-                string url = r["Url"].ToString();
-
-                if (!string.IsNullOrEmpty(pdf))
+                if (r.Read())
                 {
-                    phPdf.Visible = true;
-                    pdfFrame.Attributes["src"] = "/SecureFile.ashx?id=" + ArticleId;
-                }
-                else if (!string.IsNullOrEmpty(html))
-                {
-                    phHtml.Visible = true;
-                    htmlFrame.Attributes["src"] = "/SecureFile.ashx?id=" + ArticleId;
-                }
-                else
-                {
-                    phNone.Visible = true;
-                    lnkOriginal.NavigateUrl = url;
+                    lblTitle.Text = r["Title"].ToString();
+                    txtNote.Text = r["Note"].ToString();
+                    chkRead.Checked = Convert.ToBoolean(r["IsRead"]);
+
+                    string pdf = r["PdfPath"].ToString();
+                    string html = r["HtmlPath"].ToString();
+                    string url = r["Url"].ToString();
+
+                    // ÖNCELİK SIRASINA GÖRE IFRAME YÜKLEME
+                    if (!string.IsNullOrEmpty(pdf))
+                    {
+                        phPdf.Visible = true;
+                        pdfFrame.Attributes["src"] = "/SecureFile.ashx?id=" + ArticleId;
+                    }
+                    else if (!string.IsNullOrEmpty(html))
+                    {
+                        phHtml.Visible = true;
+                        htmlFrame.Attributes["src"] = html; // Yerel HTML kopyası
+                    }
+                    else if (!string.IsNullOrEmpty(url))
+                    {
+                        // PDF veya HTML yoksa orijinal siteyi iframe içinde açmayı dene
+                        phHtml.Visible = true;
+                        htmlFrame.Attributes["src"] = url;
+                    }
+                    else
+                    {
+                        phNone.Visible = true;
+                    }
                 }
             }
         }

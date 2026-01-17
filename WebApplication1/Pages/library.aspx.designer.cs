@@ -15,6 +15,15 @@ namespace WebApplication1.Pages
     {
 
         /// <summary>
+        /// updLibrary denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updLibrary;
+
+        /// <summary>
         /// lblInfo denetimi.
         /// </summary>
         /// <remarks>

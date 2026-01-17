@@ -104,7 +104,9 @@
 
             <div class="d-grid gap-2 mt-3">
               <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-primary"
-                  Text="Ara" OnClick="btnSearch_Click" />
+    Text="Ara" OnClick="btnSearch_Click" 
+    OnClientClick="this.disabled=true; this.value='Aranıyor...';" 
+    UseSubmitBehavior="false" />
             </div>
 
           </div>
@@ -118,7 +120,9 @@
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="muted">İlk yükleme 50; “Daha Fazla” 50’şer ekler.</span>
             <asp:Button ID="btnLoadMore" runat="server" CssClass="btn btn-outline-secondary btn-sm"
-                        Text="Daha Fazla" OnClick="btnLoadMore_Click" />
+    Text="Daha Fazla" OnClick="btnLoadMore_Click" 
+    OnClientClick="this.disabled=true; this.value='Yükleniyor...';" 
+    UseSubmitBehavior="false" />
           </div>
 
           <asp:GridView ID="gvResults" runat="server" CssClass="table table-striped"
@@ -147,21 +151,24 @@
 
               <asp:TemplateField HeaderText="İşlem">
                 <ItemTemplate>
+                    <div class="d-flex gap-1">
+            <asp:LinkButton ID="btnAdd" runat="server" 
+                CommandName="AddToLib" 
+                CommandArgument='<%# Container.DataItemIndex %>' 
+                CssClass="btn btn-sm btn-primary"
+                OnClientClick="this.classList.add('disabled');">
+                + Ekle
+            </asp:LinkButton>
 
-                  <asp:LinkButton ID="btnAdd" runat="server"
-                      CssClass="btn btn-outline-primary btn-sm"
-                      Text="Kütüphaneme Ekle"
-                      CommandName="AddToLib"
-                      CommandArgument="<%# ((GridViewRow)Container).RowIndex %>"
-                      OnClientClick="showLoading();" />
-
-                  <asp:LinkButton ID="btnRemove" runat="server"
-                      CssClass="btn btn-outline-danger btn-sm"
-                      Text="Kütüphaneden Çıkar"
-                      CommandName="RemoveFromLib"
-                      CommandArgument="<%# ((GridViewRow)Container).RowIndex %>"
-                      OnClientClick="showLoading();" />
-
+            <asp:LinkButton ID="btnRemove" runat="server" 
+                CommandName="RemoveFromLib" 
+                CommandArgument='<%# Container.DataItemIndex %>' 
+                CssClass="btn btn-sm btn-danger"
+                OnClientClick="return confirm('Kütüphaneden çıkarılsın mı?');">
+                - Çıkar
+            </asp:LinkButton>
+        </div>
+                  
                 </ItemTemplate>
               </asp:TemplateField>
 
@@ -174,5 +181,17 @@
 
     </ContentTemplate>
   </asp:UpdatePanel>
+    <asp:UpdateProgress ID="updProgress" runat="server" AssociatedUpdatePanelID="upd">
+    <ProgressTemplate>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                    background: rgba(255,255,255,0.7); z-index: 9999; 
+                    display: flex; align-items: center; justify-content: center;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">İşlem yapılıyor...</span>
+            </div>
+            <strong class="ms-2">Lütfen bekleyin...</strong>
+        </div>
+    </ProgressTemplate>
+</asp:UpdateProgress>
 
 </asp:Content>

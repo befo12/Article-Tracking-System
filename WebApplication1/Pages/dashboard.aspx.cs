@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack; // HtmlAgilityPack Yüklü Olmalı!
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
@@ -12,7 +13,6 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using HtmlAgilityPack; // HtmlAgilityPack Yüklü Olmalı!
 
 namespace WebApplication1.Pages
 {
@@ -34,7 +34,7 @@ namespace WebApplication1.Pages
             if (tags.Count == 0) tags = new List<string> { "Artificial Intelligence", "Machine Learning", "Physics" };
 
             // İlk 3 konuyu al
-            tags = tags.Take(3).ToList();
+            tags = tags.Take(4).ToList();
             var groups = new List<object>();
 
             foreach (var t in tags)

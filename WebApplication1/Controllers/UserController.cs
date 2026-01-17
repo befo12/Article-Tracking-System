@@ -1,95 +1,78 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Web;
 using System.Web.Http;
 
 namespace WebApplication1.Controllers
 {
+    [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
-        private string Cs = System.Configuration.ConfigurationManager
-            .ConnectionStrings["Db"].ConnectionString;
+        private string Cs = System.Configuration.ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 
-        // POST api/users/register
+        // ==========================================
+        // 1. GİRİŞ (LOGIN)
+        // ==========================================
         [HttpPost]
-        public IHttpActionResult Register(UserDto model)
-        {
-            if (string.IsNullOrWhiteSpace(model.Email) ||
-                string.IsNullOrWhiteSpace(model.Password))
-            {
-                return BadRequest("E-posta ve şifre zorunludur.");
-            }
-
-            using (var con = new SqlConnection(Cs))
-            using (var cmd = new SqlCommand(
-                @"IF EXISTS(SELECT 1 FROM Users WHERE Email=@e)
-                    SELECT -1;
-                  ELSE
-                  BEGIN
-                    INSERT INTO Users(Email,Password,Name)
-                    VALUES (@e,@p,@n);
-                    SELECT SCOPE_IDENTITY();
-                  END", con))
-            {
-                cmd.Parameters.AddWithValue("@e", model.Email);
-                cmd.Parameters.AddWithValue("@p", model.Password);
-                cmd.Parameters.AddWithValue("@n", (object)model.Name ?? DBNull.Value);
-
-                con.Open();
-                var res = cmd.ExecuteScalar();
-
-                if (Convert.ToInt32(res) == -1)
-                    return BadRequest("Bu e-posta zaten kayıtlı.");
-
-                return Ok(new { message = "Kayıt başarılı", userId = Convert.ToInt32(res) });
-            }
-        }
-
-        // POST api/users/login
-        [HttpPost]
+        [Route("login")]
         public IHttpActionResult Login(LoginDto model)
         {
-            if (model == null)
-                return BadRequest("MODEL NULL GELİYOR");
-
-            if (string.IsNullOrWhiteSpace(model.Email))
-                return BadRequest("EMAIL NULL GELİYOR");
-
-            if (string.IsNullOrWhiteSpace(model.Password))
-                return BadRequest("PASSWORD NULL GELİYOR");
+            if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password))
+                return BadRequest("Email veya şifre eksik.");
 
             using (var con = new SqlConnection(Cs))
-            using (var cmd = new SqlCommand(
-                @"SELECT Id, Name FROM Users 
-                  WHERE Email=@e AND Password=@p", con))
+            using (var cmd = new SqlCommand("SELECT Id, Name FROM Users WHERE Email=@e AND Password=@p", con))
             {
                 cmd.Parameters.AddWithValue("@e", model.Email);
                 cmd.Parameters.AddWithValue("@p", model.Password);
-
                 con.Open();
                 using (var r = cmd.ExecuteReader())
                 {
-                    if (!r.Read())
-                        return BadRequest("Email veya şifre hatalı.");
+                    if (!r.Read()) return BadRequest("Hatalı bilgiler.");
 
                     int uid = Convert.ToInt32(r["Id"]);
-                    string name = Convert.ToString(r["Name"]);
+                    string name = r["Name"].ToString();
+
+                    if (HttpContext.Current.Session != null)
+                    {
+                        HttpContext.Current.Session["UserId"] = uid;
+                        HttpContext.Current.Session["displayName"] = name;
+                        HttpContext.Current.Session["Email"] = model.Email;
+                    }
 
                     return Ok(new { userId = uid, displayName = name });
                 }
             }
         }
+
+     
+        // ==========================================
+        // 5. KAYIT OL (REGISTER)
+        // ==========================================
+        [HttpPost]
+        [Route("register")]
+        public IHttpActionResult Register(UserDto model)
+        {
+            if (model == null || string.IsNullOrEmpty(model.Email)) return BadRequest("Eksik bilgi.");
+            try
+            {
+                using (var con = new SqlConnection(Cs))
+                using (var cmd = new SqlCommand("INSERT INTO Users(Email,Password,Name) VALUES(@e,@p,@n)", con))
+                {
+                    cmd.Parameters.AddWithValue("@e", model.Email);
+                    cmd.Parameters.AddWithValue("@p", model.Password);
+                    cmd.Parameters.AddWithValue("@n", (object)model.Name ?? DBNull.Value);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    return Ok();
+                }
+            }
+            catch (Exception ex) { return InternalServerError(ex); }
+        }
     }
 
-    public class UserDto
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
-    }
-
-    public class LoginDto
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
+    // --- DTO MODELLERİ ---
+    public class UserDto { public string Email { get; set; } public string Password { get; set; } public string Name { get; set; } }
+    public class LoginDto { public string Email { get; set; } public string Password { get; set; } }
 }

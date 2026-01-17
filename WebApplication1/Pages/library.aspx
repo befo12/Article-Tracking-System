@@ -1,228 +1,160 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Master/Site.Master"
-    AutoEventWireup="true" CodeBehind="Library.aspx.cs"
-    Inherits="WebApplication1.Pages.Library" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="Library.aspx.cs" Inherits="WebApplication1.Pages.Library" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <asp:UpdatePanel ID="updLibrary" runat="server">
+        <ContentTemplate>
+            <style>
+                .table td, .table th { vertical-align: middle !important; }
+                .note-box { 
+    width: 100%; 
+    height: 38px; 
+    font-size: 13px; 
+    padding: 6px; 
+    border: 1px solid #dee2e6; 
+    border-radius: 6px; 
+    background-color: #f8f9fa; 
+    resize: none; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    transition: all 0.2s ease; /* Daha yumuşak bir geçiş için */
+}
 
-  <!-- NOT KUTUSU İÇİN STİLLER -->
-  <style>
-      .note-wrap {
-          display: flex;
-          align-items: flex-start;
-          gap: 6px;
-      }
+.note-box:focus { 
+    /* position: absolute;  <-- Soruna neden olan satırı sildik veya yorum satırı yaptık */
+    min-height: 100px !important; /* Yüksekliği bulunduğu yerde artırır */
+    background: white; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-color: #0d6efd; 
+    outline: none; 
+    white-space: normal; 
+    overflow-y: auto; 
+}
+            </style>
 
-      .note-box {
-          width: 100%;
-          min-height: 32px;
-          font-size: 14px;
-          padding: 6px 8px;
-          transition: all .2s ease;
-          resize: none;
-          overflow: hidden;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-      }
+            <h2 class="mb-3">Kütüphanem</h2>
+            <asp:Label runat="server" ID="lblInfo" CssClass="mb-2 d-block text-muted" />
 
-      /* Normal — tek satır görünüm */
-      .note-box.collapsed {
-          height: 32px !important;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-      }
+            <div class="row g-2 align-items-end mb-4 bg-light p-3 rounded">
+                <div class="col-md-4">
+                    <label class="form-label small fw-bold">Arama</label>
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" Placeholder="Başlık veya not ara..."></asp:TextBox>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label small">Nerede ara?</label>
+                    <asp:DropDownList ID="ddlSearchIn" runat="server" CssClass="form-select">
+                        <asp:ListItem Text="Başlık" Value="title" />
+                        <asp:ListItem Text="Not" Value="note" />
+                        <asp:ListItem Text="Her İkisi" Value="both" Selected="True" />
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label small">Eşleşme</label>
+                    <asp:DropDownList ID="ddlMatch" runat="server" CssClass="form-select">
+                        <asp:ListItem Text="Hepsi (AND)" Value="AND" Selected="True" />
+                        <asp:ListItem Text="Biri (OR)" Value="OR" />
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label small">Durum</label>
+                    <asp:DropDownList ID="ddlRead" runat="server" CssClass="form-select">
+                        <asp:ListItem Text="Hepsi" Value="" />
+                        <asp:ListItem Text="Okunmadı" Value="0" />
+                        <asp:ListItem Text="Okundu" Value="1" />
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-2">
+                    <asp:Button ID="btnSearch" runat="server" Text="Filtrele" CssClass="btn btn-primary w-100" OnClick="btnSearch_Click" />
+                </div>
+            </div>
 
-      /* Odaklanınca açılır */
-      .note-box.expanded {
-          height: 120px !important;
-          white-space: normal;
-          overflow-y: auto;
-          resize: vertical;
-      }
-  </style>
+           <asp:GridView runat="server" ID="gvLib"
+    AutoGenerateColumns="False"
+    CssClass="table table-hover align-middle shadow-sm"
+    DataKeyNames="Id"
+    AllowPaging="true"
+    PageSize="10"
+    OnPageIndexChanging="gvLib_PageIndexChanging"
+    OnRowCommand="gvLib_RowCommand"
+    OnRowDataBound="gvLib_RowDataBound">
 
-  <h2 class="mb-3">Kütüphanem</h2>
-  <asp:Label runat="server" ID="lblInfo" CssClass="mb-2 d-block text-muted" />
-
-  <!-- FİLTRE BÖLÜMÜ -->
-  <div class="row g-2 align-items-end mb-3">
-    <div class="col-md-5">
-      <label class="form-label">Anahtar kelimeler</label>
-      <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control"
-                   Placeholder="örn: slice 2mm NIST"></asp:TextBox>
-    </div>
-
-    <div class="col-md-2">
-      <label class="form-label">Nerede ara?</label>
-      <asp:DropDownList ID="ddlSearchIn" runat="server" CssClass="form-select">
-        <asp:ListItem Text="Başlık" Value="title" />
-        <asp:ListItem Text="Not" Value="note" />
-        <asp:ListItem Text="Başlık + Not" Value="both" Selected="True" />
-      </asp:DropDownList>
-    </div>
-
-    <div class="col-md-2">
-      <label class="form-label">Eşleşme</label>
-      <asp:DropDownList ID="ddlMatch" runat="server" CssClass="form-select">
-        <asp:ListItem Text="Tüm kelimeler (AND)" Value="AND" Selected="True" />
-        <asp:ListItem Text="Herhangi biri (OR)" Value="OR" />
-      </asp:DropDownList>
-    </div>
-
-    <div class="col-md-2">
-      <label class="form-label">Durum</label>
-      <asp:DropDownList ID="ddlRead" runat="server" CssClass="form-select">
-        <asp:ListItem Text="Hepsi" Value="" />
-        <asp:ListItem Text="Sadece Okunmadı" Value="0" />
-        <asp:ListItem Text="Sadece Okundu" Value="1" />
-      </asp:DropDownList>
-    </div>
-
-    <div class="col-md-1">
-      <asp:Button ID="btnSearch" runat="server" Text="Uygula"
-                  CssClass="btn btn-outline-secondary w-100" OnClick="btnSearch_Click" />
-    </div>
-  </div>
-
-  <!-- GRID -->
-  <asp:GridView runat="server" ID="gvLib" AutoGenerateColumns="False"
-      CssClass="table table-striped table-sm"
-      DataKeyNames="Id"
-      OnRowCommand="gvLib_RowCommand"
-      OnPageIndexChanging="gvLib_PageIndexChanging"
-      AllowPaging="true" PageSize="10">
-
-    <Columns>
-
-      <%-- Başlık --%>
-      <asp:BoundField DataField="Title" HeaderText="Başlık" />
-
-      <%-- CrossRef Bağlantısı --%>
-      <asp:HyperLinkField DataNavigateUrlFields="Url"
-                          DataTextField="Url"
-                          HeaderText="Bağlantı"
-                          Target="_blank" />
-
-      <%-- Aç (PDF / HTML / Orijinal) --%>
-      <asp:TemplateField HeaderText="Aç">
-        <ItemTemplate>
-
-          <!-- PDF varsa -->
-          <asp:PlaceHolder ID="phPdf" runat="server"
-              Visible='<%# !string.IsNullOrEmpty(Convert.ToString(Eval("PdfPath"))) %>'>
-            <a class="btn btn-sm btn-outline-primary me-1"
-               target="_blank"
-               href='<%# "/SecureFile.ashx?id=" + Eval("Id") %>'>PDF Aç</a>
-          </asp:PlaceHolder>
-
-          <!-- HTML varsa -->
-          <asp:PlaceHolder ID="phHtml" runat="server"
-              Visible='<%# !string.IsNullOrEmpty(Convert.ToString(Eval("HtmlPath"))) %>'>
-            <a class="btn btn-sm btn-outline-secondary me-1"
-               target="_blank"
-               href='<%# "/SecureFile.ashx?id=" + Eval("Id") %>'>HTML Aç</a>
-          </asp:PlaceHolder>
-
-          <!-- İkisi de yoksa -->
-          <asp:PlaceHolder ID="phNone" runat="server"
-              Visible='<%# string.IsNullOrEmpty(Convert.ToString(Eval("PdfPath")))
-                      && string.IsNullOrEmpty(Convert.ToString(Eval("HtmlPath"))) %>'>
-            <span class="text-muted me-2">Yerel kopya yok</span>
-            <a class="btn btn-sm btn-outline-dark"
-               target="_blank"
-               href='<%# Eval("Url") %>'>Orijinal</a>
-          </asp:PlaceHolder>
-
-        </ItemTemplate>
-      </asp:TemplateField>
-
-      <%-- Not + Kaydet (expand/collapse) --%>
-      <asp:TemplateField HeaderText="Not">
-        <ItemTemplate>
-          <div class="note-wrap">
-            <asp:TextBox ID="txtNote" runat="server"
-                         Text='<%# Bind("Note") %>'
-                         TextMode="MultiLine"
-                         CssClass="form-control form-control-sm note-box collapsed"
-                         onfocus="noteFocus(this);"
-                         onblur="noteBlur(this);"
-                         oninput="noteInput(this);" />
-            <asp:LinkButton runat="server"
-                            CssClass="btn btn-sm btn-primary"
-                            CommandName="saveNote"
-                            CommandArgument='<%# Eval("Id") %>'>
-              Kaydet
-            </asp:LinkButton>
-          </div>
-        </ItemTemplate>
-      </asp:TemplateField>
-        <asp:TemplateField HeaderText="Oku">
+                <Columns>
+                    <asp:BoundField DataField="Title" HeaderText="Başlık" ItemStyle-Width="30%" />
+                    
+                    <%-- 1. SÜTUN: OKUMA MODU (Read.aspx) --%>
+<asp:TemplateField HeaderText="Okuma Modu">
     <ItemTemplate>
-        <asp:HyperLink ID="btnRead" runat="server"
-            CssClass="btn btn-sm btn-success"
+        <asp:HyperLink runat="server" CssClass="btn btn-sm btn-success" 
             NavigateUrl='<%# "~/Pages/Read.aspx?id=" + Eval("Id") %>'>
-            Oku
+            <i class="fa fa-book-open"></i> Oku
         </asp:HyperLink>
     </ItemTemplate>
 </asp:TemplateField>
 
-      <%-- Okundu --%>
-      <asp:TemplateField HeaderText="Okundu">
-        <ItemTemplate>
-          <asp:CheckBox ID="chkRead" runat="server"
-                        Checked='<%# Convert.ToBoolean(Eval("IsRead")) %>'
-                        AutoPostBack="true"
-                        OnCheckedChanged="ChkReadChanged" />
-        </ItemTemplate>
-      </asp:TemplateField>
+<%-- 2. SÜTUN: DOSYA / KAYNAK LİNKLERİ --%>
+<asp:TemplateField HeaderText="Kaynak Bağlantısı">
+    <ItemTemplate>
+        <div class="d-flex gap-1">
+            <%-- PDF Varsa --%>
+            <asp:PlaceHolder runat="server" 
+                Visible='<%# Eval("PdfPath") != DBNull.Value && !string.IsNullOrEmpty(Convert.ToString(Eval("PdfPath"))) %>'>
+                <a class="btn btn-sm btn-danger" target="_blank" href='<%# "/SecureFile.ashx?id=" + Eval("Id") %>'>PDF</a>
+            </asp:PlaceHolder>
 
-      <%-- Sil --%>
-      <asp:TemplateField HeaderText="İşlem">
-        <ItemTemplate>
-          <asp:LinkButton runat="server"
-                          CommandName="remove"
-                          CommandArgument='<%# Eval("Id") %>'
-                          CssClass="btn btn-sm btn-outline-danger">
-            Sil
-          </asp:LinkButton>
-        </ItemTemplate>
-      </asp:TemplateField>
+            <%-- HTML Varsa --%>
+            <asp:PlaceHolder runat="server" 
+                Visible='<%# Eval("HtmlPath") != DBNull.Value && !string.IsNullOrEmpty(Convert.ToString(Eval("HtmlPath"))) %>'>
+                <a class="btn btn-sm btn-info text-white" target="_blank" href='<%# Eval("HtmlPath") %>'>HTML</a>
+            </asp:PlaceHolder>
 
-    </Columns>
+            <%-- Orijinal Link (Her zaman gösterilebilir veya diğerleri yoksa gösterilir) --%>
+            <a class="btn btn-sm btn-outline-secondary" target="_blank" href='<%# Eval("Url") %>'>
+                <%# Eval("Doi") != DBNull.Value && !string.IsNullOrEmpty(Convert.ToString(Eval("Doi"))) ? Eval("Doi") : "Link" %>
+            </a>
+        </div>
+    </ItemTemplate>
+</asp:TemplateField>
+                    <asp:TemplateField HeaderText="Okundu">
+    <ItemTemplate>
+        <asp:CheckBox 
+            ID="chkRead"
+            runat="server"
+            Checked='<%# Convert.ToBoolean(Eval("IsRead")) %>'
+            AutoPostBack="true"
+            OnCheckedChanged="ChkReadChanged" />
+    </ItemTemplate>
+</asp:TemplateField>
 
-  </asp:GridView>
+                    <asp:TemplateField HeaderText="Notlarım">
+                        <ItemTemplate>
+                            <div class="d-flex align-items-center gap-2">
+                                <asp:TextBox ID="txtNote" runat="server" Text='<%# Bind("Note") %>' TextMode="MultiLine" CssClass="note-box" />
+                                <asp:LinkButton runat="server" CommandName="saveNote" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn-sm btn-primary">💾</asp:LinkButton>
+                            </div>
+                        </ItemTemplate>
+                    </asp:TemplateField>
 
-  <!-- NOT KUTUSU JS (expand / collapse + auto-height) -->
-  <script type="text/javascript">
-      // textarea yüksekliğini içeriğe göre ayarla
-      function noteAutoSize(el) {
-          el.style.height = "auto";
-          el.style.height = (el.scrollHeight) + "px";
-      }
+                    <asp:TemplateField HeaderText="Puan">
+                        <ItemTemplate>
+                            <asp:DropDownList ID="ddlRating" runat="server" CssClass="form-select form-select-sm" AutoPostBack="true" OnSelectedIndexChanged="RatingChanged" Width="75px">
+                                <asp:ListItem Text="-" Value="0" />
+                                <asp:ListItem Text="1" Value="1" />
+                                <asp:ListItem Text="2" Value="2" />
+                                <asp:ListItem Text="3" Value="3" />
+                                <asp:ListItem Text="4" Value="4" />
+                                <asp:ListItem Text="5" Value="5" />
+                            </asp:DropDownList>
+                        </ItemTemplate>
+                    </asp:TemplateField>
 
-      function noteFocus(el) {
-          el.classList.remove("collapsed");
-          el.classList.add("expanded");
-          noteAutoSize(el);
-      }
-
-      function noteBlur(el) {
-          // Kaydettikten sonra da collapse olacak, sadece ilk satır görünsün
-          el.classList.remove("expanded");
-          el.classList.add("collapsed");
-      }
-
-      function noteInput(el) {
-          noteAutoSize(el);
-      }
-
-      // Sayfa yüklenince mevcut not kutularını collapsed moda al
-      window.addEventListener("load", function () {
-          var areas = document.querySelectorAll(".note-box");
-          areas.forEach(function (a) {
-              a.classList.add("collapsed");
-          });
-      });
-  </script>
-
+                    <asp:TemplateField HeaderText="İşlem">
+                        <ItemTemplate>
+                            <asp:LinkButton runat="server" CommandName="remove" CommandArgument='<%# Eval("Id") %>' 
+                                CssClass="btn btn-sm btn-outline-danger" OnClientClick="return confirm('Kütüphaneden çıkartılsın mı?');">Kütüphaneden Çıkart</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

@@ -1,50 +1,45 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true"
-    CodeBehind="Site.Master.cs" Inherits="WebApplication1.Site" %>
-<link href="/Styles/site.css" rel="stylesheet" />
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="WebApplication1.Site" %>
 
 <!DOCTYPE html>
 <html>
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-    <link href="/Styles/site.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Styles/site.css" rel="stylesheet" />
 </head>
-
 <body>
-
 <form runat="server">
-
-    <!-- ScriptManager BURAYA (form içinde en üstte) -->
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand bg-light px-3">
+    <nav class="navbar navbar-expand bg-light px-3 shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/Pages/Default.aspx">Makale</a>
+            <a class="navbar-brand fw-bold" href="/Pages/Default.aspx">Makale Takip</a>
 
             <div class="ms-auto d-flex align-items-center gap-3">
-
                 <asp:LoginView ID="lvAuth" runat="server">
                     <AnonymousTemplate>
-                        <a class="nav-link" href="/Pages/Login.aspx">Giriş</a>
-                        <a class="nav-link" href="/Pages/Register.aspx">Kayıt</a>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-outline-primary btn-sm" href="/Pages/Login.aspx">Giriş</a>
+                            <a class="btn btn-primary btn-sm" href="/Pages/Register.aspx">Kayıt Ol</a>
+                        </div>
                     </AnonymousTemplate>
 
                     <LoggedInTemplate>
-                        <a class="nav-link" href="/Pages/Dashboard.aspx">Ana Sayfa</a>
-                        <a class="nav-link" href="/Pages/Search.aspx">Makale Ara</a>
-                        <a class="nav-link" href="/Pages/Library.aspx">Kütüphanem</a>
-                        <a class="nav-link" href="/Pages/Profile.aspx">Profil</a>
+                        <div class="d-flex align-items-center gap-3">
+                            <a class="nav-link" href="/Pages/Search.aspx">Makale Ara</a>
+                            <a class="nav-link" href="/Pages/Library.aspx">Kütüphanem</a>
+                            <a class="nav-link" href="/Pages/Profile.aspx">Profil</a>
 
-                        <span class="navbar-text">
-                          Hoş geldin, <asp:Label ID="lblUser" runat="server" />
-                        </span>
-                        <asp:LinkButton ID="btnLogout" runat="server"
-                            CssClass="btn btn-outline-secondary btn-sm"
-                            OnClick="Logout_Click">Çıkış</asp:LinkButton>
+                            <span class="navbar-text border-start ps-3 ms-2">
+                              Hoş geldin, <strong><asp:Label ID="lblUser" runat="server" /></strong>
+                            </span>
+                            
+                            <asp:LinkButton ID="btnLogout" runat="server"
+                                CssClass="btn btn-danger btn-sm ms-2"
+                                OnClick="Logout_Click">Çıkış Yap</asp:LinkButton>
+                        </div>
                     </LoggedInTemplate>
                 </asp:LoginView>
-
             </div>
         </div>
     </nav>
@@ -55,32 +50,16 @@
 
 </form>
 
-<!-- LOADING OVERLAY -->
-<div id="loadingOverlay"
-     style="
-        position:fixed; top:0; left:0;
-        width:100%; height:100%;
-        background:rgba(0,0,0,0.4);
-        display:none;
-        z-index:9999;
-        justify-content:center;
-        align-items:center;">
+<div id="loadingOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); display:none; z-index:9999; justify-content:center; align-items:center;">
     <div class="spinner-border text-light" style="width:3rem; height:3rem;"></div>
 </div>
 
 <script type="text/javascript">
-    function showLoading() {
-        document.getElementById("loadingOverlay").style.display = "flex";
+    function showLoading() { document.getElementById("loadingOverlay").style.display = "flex"; }
+    function hideLoading() { document.getElementById("loadingOverlay").style.display = "none"; }
+    if (typeof Sys !== 'undefined') {
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () { hideLoading(); });
     }
-
-    function hideLoading() {
-        document.getElementById("loadingOverlay").style.display = "none";
-    }
-
-    // UpdatePanel tamamlanınca loader'ı kapat
-    Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
-        hideLoading();
-    });
 </script>
 
 </body>

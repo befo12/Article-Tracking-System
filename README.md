@@ -35,6 +35,7 @@ Kullanıcılar, ilgi alanlarına göre makale araması yapabilir, makaleleri ki�
 
 📄 Proje Raporu (PDF / Word):
 https://drive.google.com/file/d/1CP5KAkk_IKxjRatt0VjpyVCpdq5DtQuB/view
+https://drive.google.com/file/d/1nc7PZOuO-vz0G7LolcED9CsA6t4jOwoH/view?usp=drive_link
 
 💻 Kaynak Kod (GitHub):
 https://github.com/befo12/Article-Tracking-System
